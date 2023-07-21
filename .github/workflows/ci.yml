@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    # branches: [ main ]
+  pull_request:
+    # branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18.x"
+
+      - name: Install pnpm
+        run: curl -f https://get.pnpm.io/v6.js | node - add --global pnpm
+
+      - name: Cache Node.js modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Check TypeScript files
+        run: pnpm tsc --noEmit
+
+      - name: Lint and format TypeScript and JavaScript files
+        run: |
+          find . -type f -not -path "./node_modules/*" \( -name "*.ts" -o -name "*.tsx" -o -name "*.js" \) | xargs pnpm eslint --fix
+          find . -type f -not -path "./node_modules/*" \( -name "*.ts" -o -name "*.tsx" -o -name "*.js" \) | xargs pnpm prettier --write
+
+      - name: Format Markdown and JSON files
+        run: |
+          find . -type f -not -path "./node_modules/*" \( -name "*.md" -o -name "*.json" \) | xargs pnpm prettier --write
+
+      - name: Run unit tests
+        run: pnpm test
