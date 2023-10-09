@@ -19,7 +19,7 @@ jobs:
           node-version: "18.x"
 
       - name: Install pnpm
-        run: curl -f https://get.pnpm.io/v6.js | node - add --global pnpm
+        run: npm install -g pnpm
 
       - name: Cache Node.js modules
         uses: actions/cache@v2

@@ -1,0 +1,71 @@
+{
+  "TopBar": {
+    "title": "Page title",
+    "signIn": "Sign in",
+    "registration": "Sign up",
+    "privacyPolicy": "Privacy Policy",
+    "contact": "Contact"
+  },
+  "Content": {
+    "heroText": "...to a platform for effective, fast and engaging learning of programming through practice and gamification",
+    "startLearningBtn": "Start learning",
+    "getToKnowBtn": "Get to know Academy",
+    "contentTitle": "What can you learn?",
+    "contentFirstParagraph": "Codebusters will allow you to learn and practice Front-end technologies such as HTML5, CSS and JavaScript!",
+    "contentSecondParagraph": "You can solve quests, climb the leaderboard, earn achievements and levels of knowledge of various technologies, and even export your results and show off!",
+    "cardTitle": "We have already been trusted by 400+ students from all over the country",
+    "cardText": "We develop educational products, run a programming academy, create software for commercial clients, conduct body leasing and promote sport",
+    "cardButton": "Meet us >"
+  },
+  "registrationPage": {
+    "register": "Sign up"
+  },
+  "registrationForm": {
+    "registration": "Sign up",
+    "signIn": "Log in",
+    "nick": "Nick",
+    "email": "Your e-mail",
+    "password": "Password",
+    "name": "Name",
+    "lastName": "Last name",
+    "confirmPassword": "Confirm password",
+    "agree": "Accept ",
+    "terms": "terms and conditions",
+    "githubRegistration": "Registration with Github",
+    "doYouHaveAccount": "Already have an account?",
+    "wrongEmail": "The email must be in the correct format",
+    "shortPassword": "Password must contain at least 8 characters",
+    "passwordComposition": "The password must contain at least 1 uppercase letter, 1 lowercase letter, 1 special character and 1 number",
+    "nickRequired": "The nickname must contain the appropriate number of characters",
+    "nameRequired": "First name must contain the appropriate number of characters",
+    "passwordRequired": "Password is required",
+    "lastNameRequired": "Last name must contain the appropriate number of characters",
+    "termsRequired": "You must accept the terms and conditions of service!",
+    "samePasswords": "Passwords must match",
+    "confirmRegistration": "Confirm registration!",
+    "resubmit": "Resubmit",
+    "weSendLink": "We have sent an activation link to the address name@example.com, please verify :)",
+    "didNotReach": "The activation email did not reach?"
+  },
+  "loginPage": {
+    "signIn": "Sign In"
+  },
+  "loginForm": {
+    "password": "Password",
+    "email": "Your email",
+    "signIn": "Sign In",
+    "githubLogin": "Sign In with Github",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password",
+    "stillDontHaveAccount": "Don't have an account yet? ",
+    "registration": "Register",
+    "passwordRequired": "Something went wrong!",
+    "wrongEmail": "Email must have a valid format"
+  },
+  "confirmModal": {
+    "confirmRegistration": "Confirm your registration!",
+    "weSend": "We have sent the activation link to name@example.com, please verification",
+    "mailDidnt": "The activation email did not arrive?",
+    "sendAgain": "Resubmit"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "TopBar": {
+    "registration": "Rejestracja",
+    "signIn": "Zaloguj się",
+    "privacyPolicy": "Polityka prywatności",
+    "contact": "Kontakt"
+  },
+  "Content": {
+    "heroText": "...to platforma do skutecznej, szybkiej i angażującej nauki programowania poprzez praktykę i grywalizację",
+    "startLearningBtn": "Zacznij naukę",
+    "getToKnowBtn": "Poznaj Akademię",
+    "contentTitle": "Czego możesz się nauczyć?",
+    "contentFirstParagraph": "Codebusters pozwoli Ci poznawać i w praktyce ćwiczyć technologie Front-end, takie jak HTML5, CSS oraz JavaScript!",
+    "contentSecondParagraph": "Możesz rozwiązywać zadania, piąć się w rankingu, zdobywać osiagnięcia i poziomy znajomości różnych technologii, a nawet wyeksportować swoje wyniki i pochwalić się nimi!",
+    "cardTitle": "Zaufało nam już 400+ kursantów z całego kraju",
+    "cardText": "Rozwijamy produkty edukacyjne, prowadzimy akademię programowania, tworzymy software dla klientów komercyjnych, prowadzimy body leasing i promujemy sport",
+    "cardButton": "Poznaj nas >"
+  },
+  "registrationPage": {
+    "register": "Zarejestruj się"
+  },
+  "registrationForm": {
+    "registration": "Zarejestruj się",
+    "signIn": "Zaloguj się",
+    "nick": "Pseudonim",
+    "email": "Twój e-mail",
+    "password": "Hasło",
+    "name": "Imię",
+    "lastName": "Nazwisko",
+    "confirmPassword": "Potwierdź hasło",
+    "agree": "Akceptuję ",
+    "terms": "zasady i warunki",
+    "githubRegistration": "Rejestracja przez Github",
+    "doYouHaveAccount": "Już masz konto?",
+    "wrongEmail": "E-mail musi mieć poprawny format",
+    "shortPassword": "Hasło musi zawierać co najmniej 8 znaków",
+    "passwordComposition": "Hasło musi zawierać co najmniej 1 dużą literę, 1 małą literę, 1 znak specjalny i 1 liczbę",
+    "nickRequired": "Pseudonim musi zawierać odpowiednią ilość znaków",
+    "nameRequired": "Imię musi zawierać odpowiednią ilość znaków",
+    "passwordRequired": "Hasło jest wymagane",
+    "lastNameRequired": "Nazwisko musi zawierać odpowiednią ilość znaków",
+    "termsRequired": "Musisz zaakceptować zasady i warunki świadczenia usług!",
+    "samePasswords": "Hasła muszą być takie same",
+    "confirmRegistration": "Potwierdź rejestrację!",
+    "resubmit": "Prześlij ponownie",
+    "weSendLink": "Przesłaliśmy link aktywacyjny na adres name@example.com, prosimy o weryfikację :)",
+    "didNotReach": "Mail aktywacyjny nie dotarł?"
+  },
+  "loginPage": {
+    "signIn": "Zaloguj się"
+  },
+  "loginForm": {
+    "password": "Hasło",
+    "email": "Twój e-mail",
+    "signIn": "Zaloguj się",
+    "githubLogin": "Logowanie się przez Github",
+    "rememberMe": "Zapamiętaj mnie",
+    "forgotPassword": "Nie pamiętam hasła",
+    "stillDontHaveAccount": "Nie masz jeszcze konta? ",
+    "registration": "Zarejestruj się",
+    "passwordRequired": "Coś poszło nie tak!",
+    "wrongEmail": "E-mail musi mieć poprawny format"
+  }
+}
