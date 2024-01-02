@@ -1,5 +1,3 @@
-"use client";
-
 import clsx from "clsx";
 import React from "react";
 
@@ -10,16 +8,31 @@ type InputProps = {
   errorMessage?: string;
   id: string;
   width: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
 };
 
 const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
-  { label, type, placeholder, errorMessage, id, width, ...restProps },
+  {
+    value,
+    onChange,
+    label,
+    type,
+    placeholder,
+    errorMessage,
+    id,
+    width,
+    ...restProps
+  },
+
   ref
 ) => {
   return (
     <>
       <label className="text-sm/5.25 font-medium text-white">{label}</label>
       <input
+        value={value}
+        onChange={onChange}
         {...restProps}
         ref={ref}
         type={type}

@@ -1,6 +1,6 @@
 import { Register } from "@/features/register";
 
-const RegisterPage = () => {
+const RegisterPage = async () => {
   return <Register />;
 };
 

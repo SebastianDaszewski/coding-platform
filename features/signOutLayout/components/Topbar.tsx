@@ -15,7 +15,7 @@ const Topbar = () => {
 
   const registrationButtonColor = isRegistrationPath
     ? "bg-yellow-500"
-    : "bg-blue-600";
+    : "bg-blue";
 
   const loginButtonColor = isLoginPath && "text-yellow-400";
 
@@ -46,7 +46,7 @@ const Topbar = () => {
                 <button
                   type="button"
                   className={clsx(
-                    "text-white w-37.5 h-10 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center",
+                    "text-white w-37.5 h-10 focus:ring-4 focus:outline-none focus:ring-blue font-medium rounded-lg text-sm px-4 py-2 text-center",
                     registrationButtonColor
                   )}
                 >

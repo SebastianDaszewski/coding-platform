@@ -9,16 +9,18 @@ type CheckboxProps = {
   linkName?: string;
   href?: string;
   errorMessage?: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const Checkbox: React.ForwardRefRenderFunction<
   HTMLInputElement,
   CheckboxProps
-> = ({ label, linkName, href, errorMessage, ...restProps }, ref) => {
+> = ({ onChange, label, linkName, href, errorMessage, ...restProps }, ref) => {
   return (
     <div className="flex flex-col items-start">
       <div className="flex gap-4 items-center h-5">
         <input
+          onChange={onChange}
           {...restProps}
           ref={ref}
           id="remember"

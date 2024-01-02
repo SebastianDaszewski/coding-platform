@@ -23,6 +23,14 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/api/auth/[...nextauth]/route.jax",
+    "app/api/auth/[...nextauth]/route.jax",
+    "features/login/components/LoginForm.jsx"
+  ],
   "exclude": ["node_modules"]
 }

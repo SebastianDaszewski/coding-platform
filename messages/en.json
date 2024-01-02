@@ -2,6 +2,7 @@
   "TopBar": {
     "title": "Page title",
     "signIn": "Sign in",
+    "signOut": "Sign out",
     "registration": "Sign up",
     "privacyPolicy": "Privacy Policy",
     "contact": "Contact"
@@ -45,7 +46,9 @@
     "confirmRegistration": "Confirm registration!",
     "resubmit": "Resubmit",
     "weSendLink": "We have sent an activation link to the address name@example.com, please verify :)",
-    "didNotReach": "The activation email did not reach?"
+    "didNotReach": "The activation email did not reach?",
+    "existingEmail": "User with the specified email already exists",
+    "existingNickname": "User with the specified pseudonim already exists"
   },
   "loginPage": {
     "signIn": "Sign In"
@@ -60,12 +63,23 @@
     "stillDontHaveAccount": "Don't have an account yet? ",
     "registration": "Register",
     "passwordRequired": "Something went wrong!",
-    "wrongEmail": "Email must have a valid format"
+    "wrongEmail": "Email must have a valid format",
+    "EmailOrPasswordIncorrect": "Email or password incorrect",
+    "confirmLogin": "Login confirmed!"
   },
   "confirmModal": {
     "confirmRegistration": "Confirm your registration!",
     "weSend": "We have sent the activation link to name@example.com, please verification",
     "mailDidnt": "The activation email did not arrive?",
     "sendAgain": "Resubmit"
+  },
+  "sideBar": {
+    "home": "Home",
+    "ranking": "Ranking",
+    "lessons": "Lessons",
+    "calendar": "Calendar",
+    "quest": "Task",
+    "settings": "Settings",
+    "admin": "Admin panel"
   }
 }

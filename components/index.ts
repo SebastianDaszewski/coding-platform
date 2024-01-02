@@ -4,5 +4,16 @@ import Input from "./Input";
 import TextLink from "./TextLink";
 import Checkbox from "./Checkbox";
 import IconWrapper from "./IconWrapper";
+import DashboardHeader from "./DashboardHeader";
+import Icon from "./Icon";
 
-export { Background, Footer, Input, TextLink, Checkbox, IconWrapper };
+export {
+  Background,
+  Footer,
+  Input,
+  TextLink,
+  Checkbox,
+  IconWrapper,
+  DashboardHeader,
+  Icon,
+};

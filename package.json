@@ -9,15 +9,21 @@
     "lint": "next lint",
     "test": "vitest"
   },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"}"
+  },
   "dependencies": {
-    "@directus/sdk": "^10.3.3",
+    "@auth/prisma-adapter": "^1.0.5",
+    "@directus/sdk": "^14.0.0",
     "@expo-google-fonts/lexend-deca": "^0.2.3",
+    "@next-auth/prisma-adapter": "0.4.4-canary.81",
     "@next/font": "^13.4.19",
     "@types/react-icons": "^3.0.0",
+    "bcrypt": "^5.1.1",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "flowbite-react": "^0.4.7",
-    "next": "13.4.4",
+    "next": "^13.5.6",
     "pnpm": "^8.7.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -29,7 +35,10 @@
     "@commitlint/cli": "^17.6.5",
     "@commitlint/config-conventional": "^17.6.5",
     "@hookform/resolvers": "^3.3.1",
+    "@nextui-org/react": "^2.1.13",
+    "@prisma/client": "^3.15.2",
     "@testing-library/react": "^14.0.0",
+    "@types/bcrypt": "^5.0.1",
     "@types/node": "20.2.5",
     "@types/react": "^18.2.7",
     "@types/react-dom": "18.2.4",
@@ -40,12 +49,18 @@
     "husky": "^8.0.3",
     "jsdom": "^22.1.0",
     "lint-staged": "^13.2.2",
+    "next-auth": "^4.24.5",
     "next-intl": "^2.20.0",
+    "notistack": "^3.0.1",
     "openapi-zod-client": "^1.11.0",
     "postcss": "8.4.24",
     "prettier": "2.8.8",
+    "prisma": "^5.7.1",
     "tailwindcss": "3.3.2",
+    "ts-node": "^10.9.1",
     "typescript": "^5.0.4",
+    "vite-plugin-require": "^0.0.3",
+    "vite-tsconfig-paths": "^4.2.3",
     "vitest": "^0.31.2"
   }
 }

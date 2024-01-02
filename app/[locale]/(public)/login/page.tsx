@@ -1,6 +1,6 @@
 import { Login } from "@/features/login";
 
-const LoginPage = () => {
+const LoginPage = async () => {
   return <Login />;
 };
 

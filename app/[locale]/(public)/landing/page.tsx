@@ -1,6 +1,6 @@
 import { Landing } from "@/features/landing";
 
-const LandingPage = () => {
+const LandingPage = async () => {
   return <Landing />;
 };
 

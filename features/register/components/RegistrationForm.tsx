@@ -4,6 +4,7 @@ import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { useTranslations } from "next-intl";
+import { SnackbarProvider, enqueueSnackbar } from "notistack";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input, Checkbox, TextLink } from "@/components";
@@ -16,7 +17,7 @@ const RegistrationForm = () => {
 
   const validationSchema = z
     .object({
-      pseudonim: z.string().nonempty({ message: `${t("nickRequired")}` }),
+      nickname: z.string().nonempty({ message: `${t("nickRequired")}` }),
       firstName: z.string().nonempty({ message: `${t("nameRequired")}` }),
       lastName: z.string().nonempty({ message: `${t("lastNameRequired")}` }),
       email: z
@@ -62,13 +63,42 @@ const RegistrationForm = () => {
     resolver: zodResolver(validationSchema),
   });
 
-  const onSubmit: SubmitHandler<ValidationSchema> = (data) => {
-    setFormSubmitted(true);
+  const onSubmit: SubmitHandler<{
+    nickname: string;
+    firstName: string;
+    lastName: string;
+    email: string;
+    password: string;
+    confirmPassword: string;
+    terms: boolean;
+  }> = async (data) => {
+    try {
+      const response = await fetch("http://localhost:3000/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setFormSubmitted(true);
+      } else if (response.status === 409) {
+        enqueueSnackbar(`${t("existingEmail")}`);
+      } else if (response.status === 410) {
+        enqueueSnackbar(`${t("existingNickname")}`);
+      }
+    } catch (error) {}
   };
+
+  const handleClickOutside = () => {
+    setFormSubmitted(false);
+  };
+
   return (
     <>
       {!formSubmitted ? (
         <div className="relative flex justify-center w-screen h-full">
+          <SnackbarProvider />
+
           <div className="top-75 tall:top-100 w-175 h-163.5 p-9 rounded-lg gap-32 text-white flex flex-col justify-start items-center relative shadow-custom bg-customGray shortMax:top-0 shortMax:scale-90">
             <form className="w-159" onSubmit={handleSubmit(onSubmit)}>
               <span className="text-2xl/9 font-extralight text-white">
@@ -83,8 +113,8 @@ const RegistrationForm = () => {
                       label={t("nick")}
                       placeholder={t("nick")}
                       type="text"
-                      errorMessage={errors.pseudonim?.message}
-                      {...register("pseudonim")}
+                      errorMessage={errors.nickname?.message}
+                      {...register("nickname")}
                     />
                   </div>
                   <Input
@@ -115,7 +145,7 @@ const RegistrationForm = () => {
                     label={t("email")}
                     placeholder="name@example.com"
                     type="email"
-                    errorMessage={errors.email?.message}
+                    errorMessage={errors.nickname?.message}
                     {...register("email")}
                   />
                 </div>
@@ -155,7 +185,7 @@ const RegistrationForm = () => {
               </div>
               <button
                 type="submit"
-                className="mt-2 mb-7 text-base/6 font-medium h-10 w-159 py-2.5 px-5 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center"
+                className="mt-2 mb-7 text-base/6 font-medium h-10 w-159 py-2.5 px-5 text-white bg-blue hover:bg-blue focus:ring-4 focus:outline-none focus:ring-blue rounded-lg text-center"
               >
                 {t("registration")}
               </button>
@@ -168,7 +198,7 @@ const RegistrationForm = () => {
           </div>
         </div>
       ) : (
-        <div className="relative flex justify-center w-full h-full">
+        <div className="relative flex justify-center w-full h-full z-50">
           <div className="relative mt-12 max-w-screen-1g rounded-lg">
             <div className="flex items-center justify-center">
               <div className="p-8 gap-8 w-175 h-69.5 rounded-lg text-white flex flex-col items-center justify-start shadow-custom bg-customGray">
@@ -183,7 +213,7 @@ const RegistrationForm = () => {
                 </span>
                 <button
                   type="submit"
-                  className="h-10 w-76.25 text-base text-medium leading-6 bg-customBlue focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center"
+                  className="h-10 w-76.25 text-base text-medium leading-6 bg-customBlue focus:ring-4 focus:outline-none focus:ring-blue rounded-lg text-center"
                 >
                   {t("resubmit")}
                 </button>
@@ -191,6 +221,12 @@ const RegistrationForm = () => {
             </div>
           </div>
         </div>
+      )}
+      {formSubmitted && (
+        <div
+          onClick={handleClickOutside}
+          className="fixed inset-0 z-40 backdrop-blur-sm"
+        />
       )}
     </>
   );

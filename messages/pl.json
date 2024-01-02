@@ -2,6 +2,7 @@
   "TopBar": {
     "registration": "Rejestracja",
     "signIn": "Zaloguj się",
+    "signOut": "Wyloguj się",
     "privacyPolicy": "Polityka prywatności",
     "contact": "Kontakt"
   },
@@ -44,7 +45,9 @@
     "confirmRegistration": "Potwierdź rejestrację!",
     "resubmit": "Prześlij ponownie",
     "weSendLink": "Przesłaliśmy link aktywacyjny na adres name@example.com, prosimy o weryfikację :)",
-    "didNotReach": "Mail aktywacyjny nie dotarł?"
+    "didNotReach": "Mail aktywacyjny nie dotarł?",
+    "existingEmail": "Użytkownik o podanym e-mailu już istnieje",
+    "existingNickname": "Użytkownik o podanym pseudonimie już istnieje"
   },
   "loginPage": {
     "signIn": "Zaloguj się"
@@ -59,6 +62,17 @@
     "stillDontHaveAccount": "Nie masz jeszcze konta? ",
     "registration": "Zarejestruj się",
     "passwordRequired": "Coś poszło nie tak!",
-    "wrongEmail": "E-mail musi mieć poprawny format"
+    "wrongEmail": "E-mail musi mieć poprawny format",
+    "EmailOrPasswordIncorrect": "Email lub hasło nieprawidłowe!",
+    "confirmLogin": "Pomyślnie zalogowano!"
+  },
+  "sideBar": {
+    "home": "Panel główny",
+    "ranking": "Ranking",
+    "lessons": "Lekcje",
+    "calendar": "Kalendarz",
+    "quest": "Zadanie",
+    "settings": "Ustawienia",
+    "admin": "Panel admina"
   }
 }

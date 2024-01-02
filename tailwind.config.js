@@ -12,12 +12,15 @@ module.exports = {
     extend: {
       colors: {
         black: "#121415",
-        darkGrey: "#222426",
         orange: "#F5A22E",
-        red: "#F74746",
         lightBlue: "#97E7E7",
         blue: "#0074F0",
         white: "#ffffff",
+        customBlack: "#222426",
+        customGray: "#222426",
+        customBlue: "#0074F0",
+        dashboardGray: "#C4C4C4",
+        doubleVectorBg: "#222426",
       },
       iconProperties: {
         iconSize: 20,
@@ -42,16 +45,12 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
-      colors: {
-        customBlack: "#222426",
-        customRed: "F74746",
-      },
-
       fontSize: {
         5.5: "1.375rem",
         6.5: "1.625rem",
         8: "2rem",
         12: "3.125rem",
+        14: "3.5rem",
         16: "4rem",
       },
       lineHeight: {
@@ -67,19 +66,30 @@ module.exports = {
       boxShadow: {
         custom: "0 0 10px 0 rgba(0, 0, 0, 0.6)",
       },
-      backgroundColor: {
-        customGray: "#222426",
-        customBlue: "#0074F0",
-      },
       spacing: {
+        13: "3.25rem",
         15: "15px",
         35: "35px",
         75: "75px",
         100: "100px",
       },
+      borderWidth: {
+        DEFAULT: "1px",
+        0.5: "0.5px",
+        2: "2px",
+        3: "3px",
+        4: "4px",
+        6: "6px",
+        8: "8px",
+      },
       width: {
+        15: "3.75rem",
+        30: "7.5rem",
+        35: "8.75rem",
         37.5: "9.375rem",
         50: "12.5rem",
+        55: "13.75rem",
+        60: "15rem",
         76.25: "19.0625rem",
         100: "25rem",
         112: "28rem",
@@ -92,6 +102,7 @@ module.exports = {
         341.5: "85.375rem",
       },
       height: {
+        0.25: "0.0625rem",
         10.5: "2.625rem",
         49.5: "12.375rem",
         50: "12.5rem",
