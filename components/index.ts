@@ -1,6 +1,6 @@
 import Background from "./Background";
 import Footer from "../features/signOutLayout/components/Footer";
-import Input from "./Input";
+import InputLoggedOut from "./InputLoggedOut";
 import TextLink from "./TextLink";
 import Checkbox from "./Checkbox";
 import IconWrapper from "./IconWrapper";
@@ -10,7 +10,7 @@ import Icon from "./Icon";
 export {
   Background,
   Footer,
-  Input,
+  InputLoggedOut,
   TextLink,
   Checkbox,
   IconWrapper,

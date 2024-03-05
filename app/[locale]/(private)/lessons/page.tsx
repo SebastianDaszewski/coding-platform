@@ -1,6 +1,6 @@
 import { Lessons } from "@/features/lessons/components";
 
-const LessonsPage = async () => {
+const LessonsPage = () => {
   return <Lessons />;
 };
 

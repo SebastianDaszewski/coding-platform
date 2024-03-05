@@ -1,6 +1,6 @@
 import { Ranking } from "@/features/ranking/components";
 
-const RankingPage = async () => {
+const RankingPage = () => {
   return <Ranking />;
 };
 

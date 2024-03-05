@@ -4,7 +4,7 @@ type DashboardHeaderProps = {
 
 const DashboardHeader: React.FC<DashboardHeaderProps> = ({ title }) => {
   return (
-    <div className="flex justify-center items-center">
+    <div className="text-black absolute top-1/2 left-1/2">
       <h1>{title}</h1>
     </div>
   );

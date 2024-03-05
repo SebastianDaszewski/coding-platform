@@ -1,8 +1,8 @@
-type ContentProps = {
+type DashboardIconProps = {
   fill: string;
 };
 
-const HomeIcon: React.FC<ContentProps> = ({ fill }) => {
+const DashboardIcon: React.FC<DashboardIconProps> = ({ fill }) => {
   return (
     <svg
       width="22"
@@ -24,4 +24,4 @@ const HomeIcon: React.FC<ContentProps> = ({ fill }) => {
   );
 };
 
-export default HomeIcon;
+export default DashboardIcon;

@@ -1,44 +1,31 @@
-import { usePathname } from "next/navigation";
-
 import {
   AdminIcon,
   CalendarIcon,
-  HomeIcon,
+  DashboardIcon,
   LessonsIcon,
-  QuestIcon,
+  TaskIcon,
   RankingIcon,
   SettingsIcon,
 } from "@/sidebarIcons";
 
-type IconProps = { iconName: string; className?: string | undefined };
+type IconProps = { iconName: string; fill: string };
 
-const Icon: React.FC<IconProps> = ({ iconName, className }) => {
-  const isHomePage = usePathname().includes("/dashboard");
-  const isRankingPage = usePathname().includes("/ranking");
-  const isLessonsPage = usePathname().includes("/lessons");
-  const isCalendarPage = usePathname().includes("/calendar");
-  const isQuestPage = usePathname().includes("/quest");
-  const isSettingsPage = usePathname().includes("/settings");
-  const isAdminPage = usePathname().includes("/admin");
+const Icon: React.FC<IconProps> = ({ iconName, fill }) => {
   switch (iconName) {
     case "AdminIcon":
-      return (
-        <div className={className}>
-          <AdminIcon fill={isAdminPage ? "orange" : "white"} />
-        </div>
-      );
+      return <AdminIcon fill={fill} />;
     case "CalendarIcon":
-      return <CalendarIcon fill={isCalendarPage ? "orange" : "white"} />;
-    case "HomeIcon":
-      return <HomeIcon fill={isHomePage ? "orange" : "white"} />;
+      return <CalendarIcon fill={fill} />;
+    case "DashboardIcon":
+      return <DashboardIcon fill={fill} />;
     case "LessonsIcon":
-      return <LessonsIcon fill={isLessonsPage ? "orange" : "white"} />;
-    case "QuestIcon":
-      return <QuestIcon fill={isQuestPage ? "orange" : "white"} />;
+      return <LessonsIcon fill={fill} />;
+    case "TaskIcon":
+      return <TaskIcon fill={fill} />;
     case "RankingIcon":
-      return <RankingIcon fill={isRankingPage ? "orange" : "white"} />;
+      return <RankingIcon fill={fill} />;
     case "SettingsIcon":
-      return <SettingsIcon fill={isSettingsPage ? "orange" : "white"} />;
+      return <SettingsIcon fill={fill} />;
     default:
       return null;
   }

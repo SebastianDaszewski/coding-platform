@@ -1,6 +1,7 @@
 "use client";
 
 import { SocialMediaBar, TopbarSignIn } from "./components";
+import SideBar from "./components/SideBar";
 
 type SignInLayoutProps = {
   children: React.ReactNode;
@@ -8,11 +9,14 @@ type SignInLayoutProps = {
 
 const SignInLayout: React.FC<SignInLayoutProps> = ({ children }) => {
   return (
-    <>
+    <div className="h-screen">
       <SocialMediaBar />
       <TopbarSignIn />
-      {children}
-    </>
+      <div className="flex w-full h-sidebarHeight">
+        <SideBar />
+        {children}
+      </div>
+    </div>
   );
 };
 

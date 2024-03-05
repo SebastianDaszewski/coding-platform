@@ -1,6 +1,6 @@
 import { Admin } from "@/features/admin";
 
-const AdminPage = async () => {
+const AdminPage = () => {
   return <Admin />;
 };
 

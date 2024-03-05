@@ -1,6 +1,6 @@
 import { Settings } from "@/features/settings/components";
 
-const SettingsPage = async () => {
+const SettingsPage = () => {
   return <Settings />;
 };
 

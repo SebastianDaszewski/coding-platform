@@ -1,8 +1,8 @@
-type ContentProps = {
+type AdminIconProps = {
   fill: string;
 };
 
-const AdminIcon: React.FC<ContentProps> = ({ fill }) => {
+const AdminIcon: React.FC<AdminIconProps> = ({ fill }) => {
   return (
     <svg
       width="22"

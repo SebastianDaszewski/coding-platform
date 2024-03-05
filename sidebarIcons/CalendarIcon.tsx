@@ -1,8 +1,8 @@
-type ContentProps = {
+type CalendarIconProps = {
   fill: string;
 };
 
-const CalendarIcon: React.FC<ContentProps> = ({ fill }) => {
+const CalendarIcon: React.FC<CalendarIconProps> = ({ fill }) => {
   return (
     <svg
       width="22"

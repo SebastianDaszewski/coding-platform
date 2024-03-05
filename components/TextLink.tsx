@@ -10,7 +10,7 @@ const TextLink: React.FC<TextLinkProps> = ({ text, linkName, href }) => {
   return (
     <div className="flex items-start">
       <div className="text-sm font-medium text-white">
-        {`${text} `}
+        {text}
         <Link href={href} className="text-blue underline">
           {linkName}
         </Link>

@@ -1,8 +1,8 @@
-type ContentProps = {
+type LessonsIconProps = {
   fill: string;
 };
 
-const LessonsIcon: React.FC<ContentProps> = ({ fill }) => {
+const LessonsIcon: React.FC<LessonsIconProps> = ({ fill }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

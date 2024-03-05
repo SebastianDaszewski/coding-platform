@@ -1,8 +1,8 @@
-type ContentProps = {
+type RankingIconProps = {
   fill: string;
 };
 
-const RankingIcon: React.FC<ContentProps> = ({ fill }) => {
+const RankingIcon: React.FC<RankingIconProps> = ({ fill }) => {
   return (
     <svg
       width="22"

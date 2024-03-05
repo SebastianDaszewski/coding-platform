@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 import { signIn, useSession } from "next-auth/react";
 import { SnackbarProvider, enqueueSnackbar } from "notistack";
 
-import { Input, Checkbox } from "@/components";
+import { InputLoggedOut, Checkbox } from "@/components";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { GithubIcon } from "@/icons";
 
@@ -29,10 +29,10 @@ const LoginForm = () => {
 
   const validationSchema = z.object({
     email: z.string().email({
-      message: `${t("wrongEmail")}`,
+      message: t("wrongEmail"),
     }),
     password: z.string().nonempty({
-      message: `${t("passwordRequired")}`,
+      message: t("passwordRequired"),
     }),
     remember: z.boolean(),
   });
@@ -47,12 +47,12 @@ const LoginForm = () => {
     e.preventDefault();
     signIn("credentials", { ...data, redirect: false }).then((callback) => {
       if (!callback?.error) {
-        enqueueSnackbar(`${t("confirmLogin")}`);
+        enqueueSnackbar(t("confirmLogin"));
         router.push("/dashboard");
       }
       if (callback?.status === 401) {
-        setErrorMessageEmailOrPassword(`${t("EmailOrPasswordIncorrect")}`);
-        enqueueSnackbar(`${t("EmailOrPasswordIncorrect")}`);
+        setErrorMessageEmailOrPassword(t("EmailOrPasswordIncorrect"));
+        enqueueSnackbar(t("EmailOrPasswordIncorrect"));
       }
     });
   };
@@ -60,7 +60,7 @@ const LoginForm = () => {
   return (
     <>
       <div className="relative flex justify-center w-full">
-        <div className="w-112 h-141 relative top-35 tall:top-100 rounded-lg text-white flex flex-col justify-between bg-customBlack shadow-custom">
+        <div className="w-112 h-141 relative top-20 tall:top-100 rounded-lg text-white flex flex-col justify-between bg-customBlack shadow-custom">
           <div className="w-112 p-9 justify-between">
             <SnackbarProvider />
             <form>
@@ -68,7 +68,7 @@ const LoginForm = () => {
                 {t("signIn")}
               </span>
               <div className="mt-7 relative">
-                <Input
+                <InputLoggedOut
                   width="w-96"
                   id="email"
                   label={t("email")}
@@ -82,7 +82,7 @@ const LoginForm = () => {
                 />
               </div>
               <div className="mt-8 mb-8">
-                <Input
+                <InputLoggedOut
                   width="w-96"
                   id="password"
                   label={t("password")}

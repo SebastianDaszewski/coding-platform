@@ -1,6 +1,6 @@
 import { Calendar } from "@/features/calendar/components";
 
-const CalendarPage = async () => {
+const CalendarPage = () => {
   return <Calendar />;
 };
 

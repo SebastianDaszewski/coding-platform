@@ -1,5 +1,5 @@
 const { theme } = require("@/tailwind.config");
 
-const { white } = theme.extend.colors;
+const { white, darkGrey, grey, extraLightGrey } = theme.extend.colors;
 
-export { white };
+export { darkGrey, grey, extraLightGrey, white };

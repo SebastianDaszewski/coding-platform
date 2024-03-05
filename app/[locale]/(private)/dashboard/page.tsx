@@ -1,6 +1,6 @@
 import { Dashboard } from "@/features/dashboard/components";
 
-const DashboardPage = async () => {
+const DashboardPage = () => {
   return <Dashboard />;
 };
 

@@ -1,17 +1,17 @@
 import AdminIcon from "./AdminIcon";
 import CalendarIcon from "./CalendarIcon";
-import HomeIcon from "./HomeIcon";
+import DashboardIcon from "./DashboardIcon";
 import LessonsIcon from "./LessonsIcon";
-import QuestIcon from "./QuestIcon";
+import TaskIcon from "./TaskIcon";
 import RankingIcon from "./RankingIcon";
 import SettingsIcon from "./SettingsIcon";
 
 export {
   AdminIcon,
   CalendarIcon,
-  HomeIcon,
+  DashboardIcon,
   LessonsIcon,
-  QuestIcon,
+  TaskIcon,
   RankingIcon,
   SettingsIcon,
 };

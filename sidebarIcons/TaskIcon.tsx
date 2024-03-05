@@ -1,8 +1,8 @@
-type ContentProps = {
+type TaskIconProps = {
   fill: string;
 };
 
-const QuestIcon: React.FC<ContentProps> = ({ fill }) => {
+const TaskIcon: React.FC<TaskIconProps> = ({ fill }) => {
   return (
     <svg
       width="24"
@@ -24,4 +24,4 @@ const QuestIcon: React.FC<ContentProps> = ({ fill }) => {
   );
 };
 
-export default QuestIcon;
+export default TaskIcon;

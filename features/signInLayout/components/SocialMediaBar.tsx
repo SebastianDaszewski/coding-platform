@@ -12,7 +12,7 @@ const SocialMediaBar = () => {
 
   return (
     <div className="flex h-10 items-center bg-black relative">
-      <div className="w-screen h-10 flex justify-end items-center gap-8 ml-10 mr-10">
+      <div className="w-screen h-10 flex justify-end items-center gap-8 pr-6">
         {socialMediasUrls.map((url: string) => (
           <SocialMediaIconPicker url={url} key={url} />
         ))}

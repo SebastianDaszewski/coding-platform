@@ -39,6 +39,7 @@ export default async function RootLayout({
   if (!session) {
     redirect("/login");
   }
+
   return (
     <html>
       <Providers>

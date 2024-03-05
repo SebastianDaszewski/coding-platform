@@ -20,7 +20,7 @@ const Topbar = () => {
   const loginButtonColor = isLoginPath && "text-yellow-400";
 
   return (
-    <div className="flex h-20 bg-customGray w-screen items-center text-center justify-center relative">
+    <div className="flex h-20 bg-customGray items-center text-center justify-center relative">
       <div className="flex h-20 bg-customGray">
         <nav className="w-screen text-white">
           <div className="h-20 flex flex-wrap items-center text-center justify-between mx-10">

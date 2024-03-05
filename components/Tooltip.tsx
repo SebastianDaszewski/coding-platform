@@ -25,7 +25,7 @@ const ToolTip: React.FC<TooltipProps> = ({ children, tooltip }) => {
             {tooltip}
           </span>
           <div
-            className=" opacity-0 group-hover:opacity-100 absolute top-2 left-9 bg-white"
+            className="opacity-0 group-hover:opacity-100 absolute top-2 left-9 bg-white"
             data-popper-arrow
           ></div>
         </div>

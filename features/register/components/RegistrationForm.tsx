@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl";
 import { SnackbarProvider, enqueueSnackbar } from "notistack";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Input, Checkbox, TextLink } from "@/components";
+import { InputLoggedOut, Checkbox, TextLink } from "@/components";
 
 const RegistrationForm = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
@@ -17,18 +17,18 @@ const RegistrationForm = () => {
 
   const validationSchema = z
     .object({
-      nickname: z.string().nonempty({ message: `${t("nickRequired")}` }),
-      firstName: z.string().nonempty({ message: `${t("nameRequired")}` }),
-      lastName: z.string().nonempty({ message: `${t("lastNameRequired")}` }),
+      nickname: z.string().nonempty({ message: t("nickRequired") }),
+      firstName: z.string().nonempty({ message: t("nameRequired") }),
+      lastName: z.string().nonempty({ message: t("lastNameRequired") }),
       email: z
         .string()
-        .nonempty({ message: `${t("wrongEmail")}` })
+        .nonempty({ message: t("wrongEmail") })
         .email({
-          message: `${t("wrongEmail")}`,
+          message: t("wrongEmail"),
         }),
       password: z
         .string()
-        .min(8, { message: `${t("shortPassword")}` })
+        .min(8, { message: t("shortPassword") })
         .refine(
           (password) => {
             const hasLowerCase = /[a-z]/.test(password);
@@ -41,18 +41,16 @@ const RegistrationForm = () => {
             return hasLowerCase && hasUpperCase && hasSpecialChar && hasNumber;
           },
           {
-            message: `${t("passwordComposition")}`,
+            message: t("passwordComposition"),
           }
         ),
-      confirmPassword: z
-        .string()
-        .nonempty({ message: `${t("passwordRequired")}` }),
+      confirmPassword: z.string().nonempty({ message: t("passwordRequired") }),
       terms: z.boolean().refine((accept) => accept === true, {
-        message: `${t("termsRequired")}`,
+        message: t("termsRequired"),
       }),
     })
     .refine((data) => data.password === data.confirmPassword, {
-      message: `${t("samePasswords")}`,
+      message: t("samePasswords"),
       path: ["confirmPassword"],
     });
   const {
@@ -82,9 +80,9 @@ const RegistrationForm = () => {
       if (response.ok) {
         setFormSubmitted(true);
       } else if (response.status === 409) {
-        enqueueSnackbar(`${t("existingEmail")}`);
+        enqueueSnackbar(t("existingEmail"));
       } else if (response.status === 410) {
-        enqueueSnackbar(`${t("existingNickname")}`);
+        enqueueSnackbar(t("existingNickname"));
       }
     } catch (error) {}
   };
@@ -99,7 +97,7 @@ const RegistrationForm = () => {
         <div className="relative flex justify-center w-screen h-full">
           <SnackbarProvider />
 
-          <div className="top-75 tall:top-100 w-175 h-163.5 p-9 rounded-lg gap-32 text-white flex flex-col justify-start items-center relative shadow-custom bg-customGray shortMax:top-0 shortMax:scale-90">
+          <div className="top-20 tall:top-100 w-175 h-163.5 p-9 rounded-lg gap-32 text-white flex flex-col justify-start items-center relative shadow-custom bg-customGray shortMax:top-0 shortMax:scale-90">
             <form className="w-159" onSubmit={handleSubmit(onSubmit)}>
               <span className="text-2xl/9 font-extralight text-white">
                 {t("registration")}
@@ -107,7 +105,7 @@ const RegistrationForm = () => {
               <div className="flex mt-10">
                 <div className="mr-6">
                   <div className="mb-7">
-                    <Input
+                    <InputLoggedOut
                       width="w-76.25"
                       id="nick"
                       label={t("nick")}
@@ -117,7 +115,7 @@ const RegistrationForm = () => {
                       {...register("nickname")}
                     />
                   </div>
-                  <Input
+                  <InputLoggedOut
                     width="w-76.25"
                     id="lastName"
                     label={t("lastName")}
@@ -129,7 +127,7 @@ const RegistrationForm = () => {
                 </div>
                 <div className="mr-4">
                   <div className="mb-7">
-                    <Input
+                    <InputLoggedOut
                       width="w-76.25"
                       id="firstName"
                       label={t("name")}
@@ -139,7 +137,7 @@ const RegistrationForm = () => {
                       {...register("firstName")}
                     />
                   </div>
-                  <Input
+                  <InputLoggedOut
                     width="w-76.25"
                     id="email"
                     label={t("email")}
@@ -151,7 +149,7 @@ const RegistrationForm = () => {
                 </div>
               </div>
               <div className="mb-6 mt-7">
-                <Input
+                <InputLoggedOut
                   width="w-159"
                   id="password"
                   label={t("password")}
@@ -162,7 +160,7 @@ const RegistrationForm = () => {
                 />
               </div>
               <div className="mb-8">
-                <Input
+                <InputLoggedOut
                   width="w-159"
                   id="confirmPassword"
                   label={t("confirmPassword")}

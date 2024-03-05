@@ -1,8 +1,8 @@
-type ContentProps = {
+type SettingsIconProps = {
   fill: string;
 };
 
-const SettingsIcon: React.FC<ContentProps> = ({ fill }) => {
+const SettingsIcon: React.FC<SettingsIconProps> = ({ fill }) => {
   return (
     <svg
       width="24"

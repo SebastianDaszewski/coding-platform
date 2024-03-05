@@ -30,7 +30,7 @@ const Content: React.FC<ContentProps> = ({ texts }) => {
     <>
       <div className="bg-black relative h-120 w-screen">
         <Background />
-        <div className="relative flex flex-col items-center top-100">
+        <div className="relative flex flex-col items-center top-20">
           <h1 className="font-extrabold text-16/15 tracking-wider text-center text-white">
             Codebusters _/&gt;
           </h1>
@@ -57,7 +57,7 @@ const Content: React.FC<ContentProps> = ({ texts }) => {
             {t("heroText")}
           </h6>
           <div>
-            <button className="text-base/6 mr-10 bg-red-600 w-50 h-12 rounded-lg text-white px-4 py-2 font-medium">
+            <button className="text-base/6 mr-10 bg-red w-50 h-12 rounded-lg text-white px-4 py-2 font-medium">
               {t("startLearningBtn")} <div className="inline-flex m-1"></div>
               <Image
                 src="/images/Vector.jpg"

@@ -12,7 +12,7 @@ const TopbarSignIn = () => {
     <div className="flex h-20 bg-customGray w-screen items-center text-center justify-center relative">
       <div className="flex h-20 bg-customGray">
         <nav className="w-screen text-white">
-          <div className="h-20 flex flex-wrap items-center text-center justify-between mx-10">
+          <div className="h-20 flex flex-wrap items-center text-center justify-between ml-10 mr-1">
             <Link href="/dashboard" className="flex items-center">
               <Image
                 src="/images/logo.jpg"
