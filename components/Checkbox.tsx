@@ -37,7 +37,7 @@ const Checkbox: React.ForwardRefRenderFunction<
       </div>
       <div className="flex-inline">
         {errorMessage && (
-          <p className="absolute text-xs/4.5 font-extralight text-red-500">
+          <p className="absolute text-xs/4.5 font-extralight text-red">
             {errorMessage}
           </p>
         )}

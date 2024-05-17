@@ -7,7 +7,7 @@ import { redirect } from "next/navigation";
 import Providers from "@/providers/Providers";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
-import "./globals.css";
+import "./././globals.css";
 
 const lexend = Lexend_Deca({
   subsets: ["latin"],
@@ -35,7 +35,6 @@ export default async function RootLayout({
   }
 
   const session = await getServerSession(authOptions);
-
   if (!session) {
     redirect("/login");
   }

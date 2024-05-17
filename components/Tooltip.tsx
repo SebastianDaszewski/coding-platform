@@ -20,7 +20,7 @@ const ToolTip: React.FC<TooltipProps> = ({ children, tooltip }) => {
         <div>
           <span
             ref={tooltipRef}
-            className="invisible group-hover:visible opacity-0 group-hover:opacity-100 bg-white text-black text-sm/3.5 h-10 w-30 rounded absolute -top-2 left-10 flex items-center justify-center"
+            className="z-40 invisible group-hover:visible opacity-0 group-hover:opacity-100 bg-white text-black text-sm/3.5 h-10 w-30 rounded absolute -top-2 left-10 flex items-center justify-center"
           >
             {tooltip}
           </span>

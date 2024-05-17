@@ -1,3 +1,4 @@
-import Task from "./Task";
+import { Task } from "./singleTask";
+import { JsTasksList } from "./jsTasksList";
 
-export { Task };
+export { Task, JsTasksList };

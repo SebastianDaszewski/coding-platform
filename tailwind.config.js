@@ -28,6 +28,7 @@ module.exports = {
         17: "17",
       },
       colors: {
+        buttonGreen: "#0E9F6E",
         grey: "#333537",
         white: "#FFFFFF",
         extraLightGrey: "#bdbdbd",
@@ -143,6 +144,7 @@ module.exports = {
       },
       height: {
         sidebarHeight: "calc(100vh - 120px)",
+        taskListHeight: "calc(100% - 85px)",
         0.25: "0.0625rem",
         10.5: "2.625rem",
         15: "3.75rem",

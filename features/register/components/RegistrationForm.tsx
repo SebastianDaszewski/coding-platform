@@ -5,6 +5,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { useTranslations } from "next-intl";
 import { SnackbarProvider, enqueueSnackbar } from "notistack";
+import { useRouter } from "next/navigation";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { InputLoggedOut, Checkbox, TextLink } from "@/components";
@@ -12,6 +13,7 @@ import { InputLoggedOut, Checkbox, TextLink } from "@/components";
 const RegistrationForm = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const t = useTranslations("registrationForm");
+  const router = useRouter();
 
   type ValidationSchema = z.infer<typeof validationSchema>;
 
@@ -80,15 +82,15 @@ const RegistrationForm = () => {
       if (response.ok) {
         setFormSubmitted(true);
       } else if (response.status === 409) {
-        enqueueSnackbar(t("existingEmail"));
+        enqueueSnackbar(t("existingEmail"), { variant: "error" });
       } else if (response.status === 410) {
-        enqueueSnackbar(t("existingNickname"));
+        enqueueSnackbar(t("existingNickname"), { variant: "error" });
       }
     } catch (error) {}
   };
 
   const handleClickOutside = () => {
-    setFormSubmitted(false);
+    router.push("/login");
   };
 
   return (

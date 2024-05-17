@@ -1,5 +1,9 @@
-const FullScreenIcon = () => {
-  return (
+import { IconWrapper } from "@/components";
+
+import { SvgProps } from "./iconTypes";
+
+const FullScreenIcon: React.FC<SvgProps> = ({ fill, size }) => (
+  <IconWrapper fill={fill} size={size}>
     <svg
       width="22"
       height="22"
@@ -15,7 +19,7 @@ const FullScreenIcon = () => {
         strokeLinejoin="round"
       />
     </svg>
-  );
-};
+  </IconWrapper>
+);
 
 export default FullScreenIcon;

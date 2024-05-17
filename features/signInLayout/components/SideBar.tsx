@@ -38,7 +38,7 @@ const sidebarItems: SidebarItem[] = [
   {
     message: "task",
     href: "/task",
-    iconName: "TaskIcon",
+    iconName: "JsTasksListIcon",
   },
   {
     message: "settings",
@@ -54,11 +54,8 @@ const sidebarItems: SidebarItem[] = [
 
 const SideBar = () => {
   const [fullMenuView, setFullMenuView] = useState(false);
-
   const t = useTranslations("sideBar");
-
   const pathname = usePathname();
-
   const isActivePage = (path: string) => pathname.includes(path);
 
   const getIconColor = (path: string) => {

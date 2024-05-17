@@ -1,3 +1,4 @@
-import { Task } from "./components";
+import { Task } from "./components/singleTask";
+import { JsTasksList } from "./components/jsTasksList";
 
-export { Task };
+export { Task, JsTasksList };

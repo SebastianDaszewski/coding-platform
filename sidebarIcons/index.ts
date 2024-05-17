@@ -5,6 +5,7 @@ import LessonsIcon from "./LessonsIcon";
 import TaskIcon from "./TaskIcon";
 import RankingIcon from "./RankingIcon";
 import SettingsIcon from "./SettingsIcon";
+import JsTasksListIcon from "./JsTasksListIcon";
 
 export {
   AdminIcon,
@@ -14,4 +15,5 @@ export {
   TaskIcon,
   RankingIcon,
   SettingsIcon,
+  JsTasksListIcon,
 };

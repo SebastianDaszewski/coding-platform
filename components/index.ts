@@ -1,19 +1,25 @@
 import Background from "./Background";
-import Footer from "../features/signOutLayout/components/Footer";
+import Button from "./Button";
 import InputLoggedOut from "./InputLoggedOut";
 import TextLink from "./TextLink";
 import Checkbox from "./Checkbox";
 import IconWrapper from "./IconWrapper";
 import DashboardHeader from "./DashboardHeader";
 import Icon from "./Icon";
+import Input from "./Input";
+import Divider from "./Divider";
+import ToolTip from "./Tooltip";
 
 export {
   Background,
-  Footer,
+  Button,
   InputLoggedOut,
   TextLink,
   Checkbox,
   IconWrapper,
   DashboardHeader,
   Icon,
+  Input,
+  Divider,
+  ToolTip,
 };

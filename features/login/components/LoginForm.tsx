@@ -6,7 +6,7 @@ import { z } from "zod";
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { signIn, useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
 import { SnackbarProvider, enqueueSnackbar } from "notistack";
 
 import { InputLoggedOut, Checkbox } from "@/components";
@@ -18,8 +18,6 @@ const LoginForm = () => {
   const [errorMessageEmailOrPassword, setErrorMessageEmailOrPassword] =
     useState("");
   const router = useRouter();
-  const session = useSession();
-  console.log(session.status);
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -47,12 +45,12 @@ const LoginForm = () => {
     e.preventDefault();
     signIn("credentials", { ...data, redirect: false }).then((callback) => {
       if (!callback?.error) {
-        enqueueSnackbar(t("confirmLogin"));
+        enqueueSnackbar(t("confirmLogin"), { variant: "success" });
         router.push("/dashboard");
       }
       if (callback?.status === 401) {
         setErrorMessageEmailOrPassword(t("EmailOrPasswordIncorrect"));
-        enqueueSnackbar(t("EmailOrPasswordIncorrect"));
+        enqueueSnackbar(t("EmailOrPasswordIncorrect"), { variant: "error" });
       }
     });
   };

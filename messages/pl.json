@@ -17,9 +17,6 @@
     "cardText": "Rozwijamy produkty edukacyjne, prowadzimy akademię programowania, tworzymy software dla klientów komercyjnych, prowadzimy body leasing i promujemy sport",
     "cardButton": "Poznaj nas >"
   },
-  "registrationPage": {
-    "register": "Zarejestruj się"
-  },
   "registrationForm": {
     "registration": "Zarejestruj się",
     "signIn": "Zaloguj się",
@@ -49,9 +46,6 @@
     "existingEmail": "Użytkownik o podanym e-mailu już istnieje",
     "existingNickname": "Użytkownik o podanym pseudonimie już istnieje"
   },
-  "loginPage": {
-    "signIn": "Zaloguj się"
-  },
   "loginForm": {
     "password": "Hasło",
     "email": "Twój e-mail",
@@ -73,7 +67,8 @@
     "calendar": "Kalendarz",
     "task": "Zadanie",
     "settings": "Ustawienia",
-    "admin": "Panel admina"
+    "admin": "Panel admina",
+    "tasksList": "Lista zadań"
   },
   "task": {
     "previousTask": "poprzednie zadanie",
@@ -104,8 +99,58 @@
     "testCaseNumber": "Przypadek testowy {number}",
     "expectedResult": "Oczekiwany rezultat",
     "yourResult": "Twój rezultat",
+    "value": "Wartość",
     "enteredValue": "Wprowadzona wartość",
     "quickTestPassedOrFailed": "Twój kod {solution, select, true {przeszedł test} false {nie przeszedł testu} other {}}",
-    "passedAllOrNot": "Twój kod {solution, select, true {przeszedł wszystkie testy} false {nie przeszedł wszystkich testów} other {}}"
+    "passedAllOrNot": "Twój kod {solution, select, true {przeszedł wszystkie testy} false {nie przeszedł wszystkich testów} other {}}",
+    "difficultySelect": "Stopień: {difficulty, select, EASY {łatwy} MEDIUM {średni} HARD {trudny} other {}}",
+    "Reverse string": "Odwróć string",
+    "Upper string": "Powiększ string",
+    "Lower string": "Zmnijesz string",
+    "Cut string": "Utnij string",
+    "Split string": "Podziel string",
+    "Check for vowels": "Sprawdź samogłoski",
+    "Count words": "Policz słowa",
+    "Check for alphanumeric characters": "Sprawdź obecność znaków",
+    "Check for consonants": "Sprawdź spółgłoski",
+    "Check for uppercase letters": "Sprawdź wielkie litery",
+    "Adding to array": "Dodaj element do tablicy",
+    "categorySelect": "Kategoria: {category, select, LOOP {Pętle} FUNCTION {Funkcje} other {}}",
+    "enterValueOrFunction": "Wprowadzono niepoprawną funkcję lub wartość testu!",
+    "enteredFunction": "Wprowadzono nieprawidłową funkcję!",
+    "enterQuickTestValue": "Wprowadź wartość do szybkiego testu",
+    "enterFunction": "Wprowadź funkcję",
+    "unexpectedResult": "Niespodziewany rezultat: ",
+    "Double the number": "Podwój numer",
+    "Doubling Each Element": "Podwój kazdy element",
+    "Halve a number": "Podziel numer",
+    "Incrementing Last Element": "Zwiększ ostatni elementu",
+    "Square the number": "Podnieś liczbę do kwadratu"
+  },
+  "list": {
+    "title": "Tytuł",
+    "category": "Kategoria",
+    "difficulty": "Stopień trudności",
+    "difficultySelect": "{difficulty, select, EASY {łatwy} MEDIUM {średni} HARD {trudny} other {}}",
+    "categorySelect": "{category, select, LOOP {Pętle} FUNCTION {Funkcje} other {}}",
+    "moveToTask": "Przejdź do zadania",
+    "tryAgain": "Spróbuj ponownie",
+    "Reverse string": "Odwróć string",
+    "Upper string": "Powiększ string",
+    "Lower string": "Zmnijesz string",
+    "Cut string": "Utnij string",
+    "Split string": "Podziel string",
+    "Check for vowels": "Sprawdź samogłoski",
+    "Count words": "Policz słowa",
+    "Check for alphanumeric characters": "Sprawdź obecność znaków",
+    "Check for consonants": "Sprawdź spółgłoski",
+    "Check for uppercase letters": "Sprawdź wielkie litery",
+    "Adding to array": "Dodaj element do tablicy",
+    "moreTasks": "Więcej zadań",
+    "Double the number": "Podwój numer",
+    "Doubling Each Element": "Podwój kazdy element",
+    "Halve a number": "Podziel numer",
+    "Incrementing Last Element": "Zwiększ ostatni elementu",
+    "Square the number": "Podnieś liczbę do kwadratu"
   }
 }

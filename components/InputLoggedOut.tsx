@@ -41,9 +41,10 @@ const InputLoggedOut: React.ForwardRefRenderFunction<
         type={type}
         id={id}
         className={clsx(
-          "h-10.5 ${width} bg-gray-700 border border-gray-600 text-white text-sm/4.375 font-normal rounded-lg focus:ring-blue-500 focus:border-blue-500 py-3 px-4",
+          width,
+          "h-10.5 bg-gray-700 border border-gray-600 text-white text-sm/4.375 font-normal rounded-lg focus:ring-blue focus:border-blue py-3 px-4",
           {
-            "border-red-500": errorMessage,
+            "border-red": errorMessage,
           }
         )}
         placeholder={placeholder}

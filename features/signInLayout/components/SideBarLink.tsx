@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import clsx from "clsx";
 
-import ToolTip from "@/components/Tooltip";
-import Divider from "@/components/Divider";
-
-import { Icon } from "@/components";
+import { ToolTip, Divider, Icon } from "@/components";
 
 type SidebarLinkProps = {
   text: string;
@@ -67,9 +64,10 @@ const SidebarLink: React.FC<SidebarLinkProps> = ({
         )}
       </Link>
       <Divider
+        margin="mt-5 -ml-4"
         color="gray-700"
         width={fullMenuView ? "55" : "15"}
-        hidden={iconName !== "AdminIcon" && iconName !== "TaskIcon"}
+        hidden={iconName !== "AdminIcon" && iconName !== "JsTasksListIcon"}
       />
     </div>
   );

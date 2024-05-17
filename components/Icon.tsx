@@ -3,9 +3,9 @@ import {
   CalendarIcon,
   DashboardIcon,
   LessonsIcon,
-  TaskIcon,
   RankingIcon,
   SettingsIcon,
+  JsTasksListIcon,
 } from "@/sidebarIcons";
 
 type IconProps = { iconName: string; fill: string };
@@ -20,12 +20,12 @@ const Icon: React.FC<IconProps> = ({ iconName, fill }) => {
       return <DashboardIcon fill={fill} />;
     case "LessonsIcon":
       return <LessonsIcon fill={fill} />;
-    case "TaskIcon":
-      return <TaskIcon fill={fill} />;
     case "RankingIcon":
       return <RankingIcon fill={fill} />;
     case "SettingsIcon":
       return <SettingsIcon fill={fill} />;
+    case "JsTasksListIcon":
+      return <JsTasksListIcon fill={fill} />;
     default:
       return null;
   }

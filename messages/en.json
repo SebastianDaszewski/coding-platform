@@ -3,7 +3,6 @@
     "title": "Page title",
     "signIn": "Sign in",
     "signOut": "Sign out",
-    "registration": "Sign up",
     "privacyPolicy": "Privacy Policy",
     "contact": "Contact"
   },
@@ -17,9 +16,6 @@
     "cardTitle": "We have already been trusted by 400+ students from all over the country",
     "cardText": "We develop educational products, run a programming academy, create software for commercial clients, conduct body leasing and promote sport",
     "cardButton": "Meet us >"
-  },
-  "registrationPage": {
-    "register": "Sign up"
   },
   "registrationForm": {
     "registration": "Sign up",
@@ -50,9 +46,6 @@
     "existingEmail": "User with the specified email already exists",
     "existingNickname": "User with the specified pseudonim already exists"
   },
-  "loginPage": {
-    "signIn": "Sign In"
-  },
   "loginForm": {
     "password": "Password",
     "email": "Your email",
@@ -67,12 +60,6 @@
     "EmailOrPasswordIncorrect": "Email or password incorrect",
     "confirmLogin": "Login confirmed!"
   },
-  "confirmModal": {
-    "confirmRegistration": "Confirm your registration!",
-    "weSend": "We have sent the activation link to name@example.com, please verification",
-    "mailDidnt": "The activation email did not arrive?",
-    "sendAgain": "Resubmit"
-  },
   "sideBar": {
     "dashboard": "Home",
     "ranking": "Ranking",
@@ -80,7 +67,8 @@
     "calendar": "Calendar",
     "task": "Task",
     "settings": "Settings",
-    "admin": "Admin panel"
+    "admin": "Admin panel",
+    "tasksList": "Tasks list"
   },
   "task": {
     "previousTask": "previous task",
@@ -111,8 +99,58 @@
     "testCaseNumber": "Test case {number}",
     "expectedResult": "Expected result",
     "yourResult": "Your result",
+    "value": "Value",
     "enteredValue": "Entered value",
     "quickTestPassedOrFailed": "Your code {solution, select, true {passed the test} false {failed the test} other {}}",
-    "passedAllOrNot": "Your code {solution, select, true {passed all tests} false {didn't pass all tests} other {}}"
+    "passedAllOrNot": "Your code {solution, select, true {passed all tests} false {did not pass all tests} other {}}",
+    "difficultySelect": "Difficulty: {difficulty, select, EASY {easy} MEDIUM {medium} HARD {hard} other {}}",
+    "Reverse string": "Reverse string",
+    "Upper string": "Upper string",
+    "Lower string": "Lower string",
+    "Cut string": "Cut string",
+    "Split string": "Split string",
+    "Check for vowels": "Sprawdź samogłoski",
+    "Count words": "Count words",
+    "Check for alphanumeric characters": "Check for alphanumeric characters",
+    "Check for consonants": "Check for consonants",
+    "Check for uppercase letters": "Check for uppercase letters",
+    "Adding to array": "Add element to array",
+    "categorySelect": "Category: {category, select, LOOP {Loops} FUNCTION {Functions} other {}}",
+    "enterValueOrFunction": "Entered incorrect function or test value!",
+    "enteredFunction": "Entered incorrect function!",
+    "enterQuickTestValue": "Enter quick test value",
+    "enterFunction": "Enter function",
+    "unexpectedResult": "Unexpected Result: ",
+    "Double the number": "Double the number",
+    "Doubling Each Element": "Doubling Each Element",
+    "Halve a number": "Halve a number",
+    "Incrementing Last Element": "Incrementing Last Element",
+    "Square the number": "Square the number"
+  },
+  "list": {
+    "title": "Title",
+    "category": "Category",
+    "difficulty": "Difficulty level",
+    "difficultySelect": "{difficulty, select, EASY {easy} MEDIUM {medium} HARD {hard} other {}}",
+    "categorySelect": "{category, select, LOOP {Loops} FUNCTION {Functions} other {}}",
+    "moveToTask": "Move to task",
+    "tryAgain": "Try again",
+    "Reverse string": "Reverse string",
+    "Upper string": "Upper string",
+    "Lower string": "Lower string",
+    "Cut string": "Cut string",
+    "Split string": "Split string",
+    "Check for vowels": "Sprawdź samogłoski",
+    "Count words": "Count words",
+    "Check for alphanumeric characters": "Check for alphanumeric characters",
+    "Check for consonants": "Check for consonants",
+    "Check for uppercase letters": "Check for uppercase letters",
+    "Adding to array": "Add element to array",
+    "moreTasks": "More tasks",
+    "Double the number": "Double the number",
+    "Doubling Each Element": "Doubling Each Element",
+    "Halve a number": "Halve a number",
+    "Incrementing Last Element": "Incrementing Last Element",
+    "Square the number": "Square the number"
   }
 }

@@ -1,12 +1,7 @@
-import { EditorProvider } from "@/context/EditorContext";
-import { Task } from "@/features/task";
+import { JsTasksList } from "@/features/task";
 
-const TaskPage = () => {
-  return (
-    <EditorProvider>
-      <Task />
-    </EditorProvider>
-  );
+const TaskListPage = () => {
+  return <JsTasksList />;
 };
 
-export default TaskPage;
+export default TaskListPage;
