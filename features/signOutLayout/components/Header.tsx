@@ -1,6 +1,6 @@
 "use client";
 
-import SocialMediaBar from "./SocialMediaBar";
+import { SocialMediaBar } from "@/components";
 import Topbar from "./Topbar";
 
 const Header = () => {

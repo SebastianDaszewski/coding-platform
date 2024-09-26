@@ -4,18 +4,17 @@
     "signIn": "Sign in",
     "signOut": "Sign out",
     "privacyPolicy": "Privacy Policy",
-    "contact": "Contact"
+    "contact": "Contact",
+    "hi": "Hi, "
   },
   "Content": {
-    "heroText": "...to a platform for effective, fast and engaging learning of programming through practice and gamification",
+    "heroText": "platform for effective, fast and engaging learning of programming through practice.",
     "startLearningBtn": "Start learning",
     "getToKnowBtn": "Get to know Academy",
     "contentTitle": "What can you learn?",
-    "contentFirstParagraph": "Codebusters will allow you to learn and practice Front-end technologies such as HTML5, CSS and JavaScript!",
-    "contentSecondParagraph": "You can solve quests, climb the leaderboard, earn achievements and levels of knowledge of various technologies, and even export your results and show off!",
-    "cardTitle": "We have already been trusted by 400+ students from all over the country",
-    "cardText": "We develop educational products, run a programming academy, create software for commercial clients, conduct body leasing and promote sport",
-    "cardButton": "Meet us >"
+    "contentFirstParagraph": "Coding platform will allow you to practice Front-end technologies such as HTML5, CSS and JavaScript!",
+    "cardTitle": "Join the community of developers who are successfully developing their skills using our platform.",
+    "cardButton": "Let's start >"
   },
   "registrationForm": {
     "registration": "Sign up",

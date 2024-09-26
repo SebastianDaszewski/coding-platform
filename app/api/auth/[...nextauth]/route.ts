@@ -60,8 +60,20 @@ export const authOptions = {
   secret: process.env.SECRET,
   debug: process.env.NODE_ENV === "development",
   callbacks: {
-    session: async (session: any) => {
+    async session({ session, token, user }: any) {
+      if (user?.nickname) {
+        session.user.nickname = user.nickname;
+      } else if (token?.nickname) {
+        session.user.nickname = token.nickname;
+      }
+
       return session;
+    },
+    async jwt({ token, user }: any) {
+      if (user?.nickname) {
+        token.nickname = user.nickname;
+      }
+      return token;
     },
   },
 };

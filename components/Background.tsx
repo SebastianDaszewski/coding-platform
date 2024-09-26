@@ -3,7 +3,7 @@ import Image from "next/legacy/image";
 const Background = () => {
   return (
     <Image
-      className="rounded-lg mx-auto"
+      className="mx-auto"
       src="/images/background.jpg"
       alt="Background"
       layout="fill"

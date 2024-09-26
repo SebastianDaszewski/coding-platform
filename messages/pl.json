@@ -4,18 +4,18 @@
     "signIn": "Zaloguj się",
     "signOut": "Wyloguj się",
     "privacyPolicy": "Polityka prywatności",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "hi": "Cześć, "
   },
   "Content": {
-    "heroText": "...to platforma do skutecznej, szybkiej i angażującej nauki programowania poprzez praktykę i grywalizację",
+    "heroText": "platforma do skutecznej, szybkiej i angażującej nauki programowania poprzez praktykę.",
     "startLearningBtn": "Zacznij naukę",
     "getToKnowBtn": "Poznaj Akademię",
     "contentTitle": "Czego możesz się nauczyć?",
-    "contentFirstParagraph": "Codebusters pozwoli Ci poznawać i w praktyce ćwiczyć technologie Front-end, takie jak HTML5, CSS oraz JavaScript!",
-    "contentSecondParagraph": "Możesz rozwiązywać zadania, piąć się w rankingu, zdobywać osiagnięcia i poziomy znajomości różnych technologii, a nawet wyeksportować swoje wyniki i pochwalić się nimi!",
-    "cardTitle": "Zaufało nam już 400+ kursantów z całego kraju",
+    "contentFirstParagraph": "Coding platform pozwoli Ci w praktyce ćwiczyć technologie Front-end, takie jak HTML5, CSS oraz JavaScript!",
+    "cardTitle": "Dołącz do społeczności programistów, którzy z powodzeniem rozwijają swoje umiejętności dzięki naszej platformie.",
     "cardText": "Rozwijamy produkty edukacyjne, prowadzimy akademię programowania, tworzymy software dla klientów komercyjnych, prowadzimy body leasing i promujemy sport",
-    "cardButton": "Poznaj nas >"
+    "cardButton": "Zaczynamy >"
   },
   "registrationForm": {
     "registration": "Zarejestruj się",
