@@ -58,7 +58,7 @@ const LoginForm = () => {
   return (
     <>
       <div className="relative flex justify-center w-full">
-        <div className="w-112 h-141 relative top-20 tall:top-100 rounded-lg text-white flex flex-col justify-between bg-customBlack shadow-custom">
+        <div className="w-112 h-141 relative top-5 tall:top-100 rounded-lg text-white flex flex-col justify-between bg-customBlack shadow-custom">
           <div className="w-112 p-9 justify-between">
             <SnackbarProvider />
             <form>

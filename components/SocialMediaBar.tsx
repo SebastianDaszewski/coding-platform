@@ -1,13 +1,9 @@
-import SocialMediaIconPicker from "./SocialMediaIconPicker";
+import { SocialMediaIconPicker } from "./index";
 
 const SocialMediaBar = () => {
   const socialMediasUrls: string[] = [
-    "https://www.facebook.com/groups/3792300160870421",
-    "https://www.instagram.com/devstock.pl/",
-    "https://www.linkedin.com/company/devstockspzoo/mycompany/",
-    "https://www.youtube.com/@devstock",
-    "https://github.com/Devstock-Academy",
-    "https://www.tiktok.com/@devstockacademy",
+    "https://www.linkedin.com/in/sebastian-daszewski-b85b26246/",
+    "https://github.com/SebastianDaszewski",
   ];
 
   return (

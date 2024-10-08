@@ -55,9 +55,7 @@ export const GET = async (request: Request) => {
   }
 };
 
-export async function PUT(
-  request: Request
-): Promise<Body | NextResponse<unknown>> {
+export async function PUT(request: Request): Promise<void | Response> {
   let result: ResultType = { message: "" };
   const resultArr: ResultType[] = [];
   const body = (await request.json()) as Body;

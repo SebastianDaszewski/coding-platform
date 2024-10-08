@@ -9,6 +9,8 @@ import Icon from "./Icon";
 import Input from "./Input";
 import Divider from "./Divider";
 import ToolTip from "./Tooltip";
+import SocialMediaIconPicker from "./SocialMediaIconPicker";
+import SocialMediaBar from "./SocialMediaBar";
 
 export {
   Background,
@@ -22,4 +24,6 @@ export {
   Input,
   Divider,
   ToolTip,
+  SocialMediaIconPicker,
+  SocialMediaBar,
 };

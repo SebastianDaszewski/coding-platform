@@ -66,7 +66,7 @@ const SideBar = () => {
     <div className="flex h-full">
       <div
         className={clsx(
-          "w-15 items-start flex flex-col justify-start gap-8 bg-black h-full",
+          "w-15 items-start flex flex-col justify-start gap-8 bg-black h-full transition-all duration-150",
           {
             "w-55": fullMenuView,
           }

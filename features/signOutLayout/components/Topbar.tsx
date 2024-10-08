@@ -1,8 +1,8 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import clsx from "clsx";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
@@ -20,42 +20,34 @@ const Topbar = () => {
   const loginButtonColor = isLoginPath && "text-yellow-400";
 
   return (
-    <div className="flex h-20 bg-customGray items-center text-center justify-center relative">
-      <div className="flex h-20 bg-customGray">
-        <nav className="w-screen text-white">
-          <div className="h-20 flex flex-wrap items-center text-center justify-between mx-10">
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/images/logo.jpg"
-                width={120}
-                height={44}
-                alt="Devstock Logo"
-              />
-            </Link>
-            <div className="flex md:order-2 items-center">
-              <span className="m-5 text-base/6">Devstock.pl</span>
-              <span className="m-5 text-2xl/6">|</span>
-              <Link href="/login">
-                <span
-                  className={clsx("m-5 mr-10 text-base/6", loginButtonColor)}
-                >
-                  {t("signIn")}
-                </span>
-              </Link>
-              <Link href="/register">
-                <button
-                  type="button"
-                  className={clsx(
-                    "text-white w-37.5 h-10 focus:ring-4 focus:outline-none focus:ring-blue font-medium rounded-lg text-sm px-4 py-2 text-center",
-                    registrationButtonColor
-                  )}
-                >
-                  {t("registration")}
-                </button>
-              </Link>
-            </div>
-          </div>
-        </nav>
+    <div className="flex h-20 bg-customGray items-center justify-between text-center relative text-white px-10">
+      <div className="flex justify-start">
+        <Link href="/landing" className="flex items-center">
+          <Image
+            src="/images/home.jpg"
+            width={30}
+            height={44}
+            alt="Devstock Logo"
+          />
+        </Link>
+      </div>
+      <div className="flex md:order-2 items-center justify-end">
+        <Link href="/login">
+          <span className={clsx("m-5 mr-10 text-base/6", loginButtonColor)}>
+            {t("signIn")}
+          </span>
+        </Link>
+        <Link href="/register">
+          <button
+            type="button"
+            className={clsx(
+              "text-white w-37.5 h-10 focus:ring-4 focus:outline-none focus:ring-blue font-medium rounded-lg text-sm px-4 py-2 text-center",
+              registrationButtonColor
+            )}
+          >
+            {t("registration")}
+          </button>
+        </Link>
       </div>
     </div>
   );

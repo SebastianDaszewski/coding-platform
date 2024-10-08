@@ -6,6 +6,7 @@ import { z } from "zod";
 import { useTranslations } from "next-intl";
 import { SnackbarProvider, enqueueSnackbar } from "notistack";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { InputLoggedOut, Checkbox, TextLink } from "@/components";
@@ -96,7 +97,7 @@ const RegistrationForm = () => {
   return (
     <>
       {!formSubmitted ? (
-        <div className="relative flex justify-center w-screen h-full">
+        <div className="relative flex justify-center h-full">
           <SnackbarProvider />
 
           <div className="top-20 tall:top-100 w-175 h-163.5 p-9 rounded-lg gap-32 text-white flex flex-col justify-start items-center relative shadow-custom bg-customGray shortMax:top-0 shortMax:scale-90">
@@ -201,22 +202,21 @@ const RegistrationForm = () => {
         <div className="relative flex justify-center w-full h-full z-50">
           <div className="relative mt-12 max-w-screen-1g rounded-lg">
             <div className="flex items-center justify-center">
-              <div className="p-8 gap-8 w-175 h-69.5 rounded-lg text-white flex flex-col items-center justify-start shadow-custom bg-customGray">
-                <span className="text-white font-extralight text-2xl/9">
-                  {t("confirmRegistration")}
+              <div className="p-8 gap-8 w-175 h-69.5 rounded-lg text-white flex flex-col items-center justify-center shadow-custom bg-customGray">
+                <span className="text-white font-extralight text-3xl/9">
+                  {t("successRegistration")}
                 </span>
                 <span className="text-white font-medium text-sm/5.25">
-                  {t("weSendLink")}
+                  {t("canLogin")}
                 </span>
-                <span className="text-white font-medium text-sm/5.25">
-                  {t("didNotReach")}
-                </span>
-                <button
-                  type="submit"
-                  className="h-10 w-76.25 text-base text-medium leading-6 bg-customBlue focus:ring-4 focus:outline-none focus:ring-blue rounded-lg text-center"
-                >
-                  {t("resubmit")}
-                </button>
+                <Link href="/login">
+                  <button
+                    type="submit"
+                    className="h-10 w-76.25 text-base text-medium leading-6 bg-customBlue focus:ring-4 focus:outline-none focus:ring-blue rounded-lg text-center"
+                  >
+                    {t("signIn")}
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

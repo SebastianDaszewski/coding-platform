@@ -1,6 +1,7 @@
 "use client";
 
-import { SocialMediaBar, TopbarSignIn } from "./components";
+import { TopbarSignIn } from "./components";
+import { SocialMediaBar } from "@/components";
 import SideBar from "./components/SideBar";
 
 type SignInLayoutProps = {

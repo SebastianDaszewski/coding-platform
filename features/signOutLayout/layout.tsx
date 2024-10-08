@@ -1,6 +1,7 @@
 "use client";
 
-import { SocialMediaBar, Topbar, Footer } from "./components";
+import { Topbar, Footer } from "./components";
+import { SocialMediaBar } from "@/components";
 
 type SignOutLayoutProps = {
   children: React.ReactNode;
