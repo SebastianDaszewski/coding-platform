@@ -39,9 +39,9 @@
     "lastNameRequired": "Nazwisko musi zawierać odpowiednią ilość znaków",
     "termsRequired": "Musisz zaakceptować zasady i warunki świadczenia usług!",
     "samePasswords": "Hasła muszą być takie same",
-    "confirmRegistration": "Potwierdź rejestrację!",
+    "successRegistration": "Rejestracja udana!",
     "resubmit": "Prześlij ponownie",
-    "weSendLink": "Przesłaliśmy link aktywacyjny na adres name@example.com, prosimy o weryfikację :)",
+    "canLogin": "Możesz teraz zalogować się na swoje konto",
     "didNotReach": "Mail aktywacyjny nie dotarł?",
     "existingEmail": "Użytkownik o podanym e-mailu już istnieje",
     "existingNickname": "Użytkownik o podanym pseudonimie już istnieje"

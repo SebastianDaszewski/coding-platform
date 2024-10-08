@@ -41,8 +41,8 @@ const Task = () => {
   const { fetchTasks } = useFetchData();
 
   const { data } = useQuery({
-    queryKey: ["tasks", 1],
-    queryFn: () => fetchTasks(1),
+    queryKey: ["tasks", 10],
+    queryFn: () => fetchTasks(10),
   });
 
   const { data: task, refetch } = useQuery({
@@ -76,7 +76,11 @@ const Task = () => {
       <div className="bg-black w-screen overflow-hidden">
         <SignInLayout>
           <div className="flex flex-col w-full p-5">
-            <Navbar handleFullscreen={handleFullscreen} />
+            <Navbar
+              allTasks={data?.assignments}
+              currentTask={task?.assignment}
+              handleFullscreen={handleFullscreen}
+            />
             <div className="w-full flex h-sidebarHeight gap-5 mt-5">
               <div
                 className={clsx(
@@ -88,7 +92,7 @@ const Task = () => {
               >
                 <div className="h-1/3">
                   <FirstTaskWindowContent
-                    dataSolutions={data?.assignment?.solutions}
+                    dataSolutions={data?.solutions}
                     taskData={task?.assignment}
                     submissions={task?.assignment?.submissions}
                   />

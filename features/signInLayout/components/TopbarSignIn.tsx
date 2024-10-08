@@ -10,7 +10,7 @@ const TopbarSignIn = () => {
 
   const { data } = useSession();
 
-  const userNickname = (data?.user as { nickname?: string })?.nickname;
+  const userNickname = (data as any)?.token?.nickname;
 
   return (
     <div className="flex h-20 bg-customGray w-screen items-center text-white text-center justify-end relative">

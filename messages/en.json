@@ -38,9 +38,9 @@
     "lastNameRequired": "Last name must contain the appropriate number of characters",
     "termsRequired": "You must accept the terms and conditions of service!",
     "samePasswords": "Passwords must match",
-    "confirmRegistration": "Confirm registration!",
+    "successRegistration": "Registration successful!",
     "resubmit": "Resubmit",
-    "weSendLink": "We have sent an activation link to the address name@example.com, please verify :)",
+    "canLogin": "You can now log in to your account",
     "didNotReach": "The activation email did not reach?",
     "existingEmail": "User with the specified email already exists",
     "existingNickname": "User with the specified pseudonim already exists"

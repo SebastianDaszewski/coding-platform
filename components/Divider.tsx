@@ -21,7 +21,11 @@ const Divider: React.FC<DividerProps> = ({
 
   return (
     <div
-      className={clsx(dividerClasses, margin, width !== "full" && `w-${width}`)}
+      className={clsx(
+        dividerClasses,
+        margin,
+        width !== "full" && `w-${width} transition-all duration-150`
+      )}
     ></div>
   );
 };

@@ -20,9 +20,7 @@ const runCode = (code: string) => {
   vm.runInContext(code, context, { timeout });
   return sandbox;
 };
-export async function POST(
-  request: Request
-): Promise<Body | NextResponse<unknown>> {
+export async function POST(request: Request): Promise<void | Response> {
   let result: ResultType = { message: "" };
   const resultArr: ResultType[] = [];
   const body = (await request.json()) as Body;

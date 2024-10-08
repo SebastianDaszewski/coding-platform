@@ -34,7 +34,7 @@ export type Task = {
 
 const JsTasksList = () => {
   const t = useTranslations("list");
-  const [limit, setLimit] = useState<number>(1);
+  const [limit, setLimit] = useState<number>(5);
   const { fetchTasks } = useFetchData();
 
   const dividerHeight = "h-3";
