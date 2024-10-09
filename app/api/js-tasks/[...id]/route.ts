@@ -100,6 +100,7 @@ export async function PUT(request: Request): Promise<void | Response> {
       }
     });
     const responseFullTests = await fetch("api/RunCode", {
+      mode: "no-cors",
       method: "POST",
       headers: {
         "Content-Type": "application/json",
