@@ -135,6 +135,7 @@ const useTesting = () => {
       const startIndex = url.indexOf("task/") + 5;
       const endIndex = url.indexOf("/", startIndex);
       const taskId = url.substring(startIndex, endIndex);
+
       let snackbarDisplayed = false;
       if (!quickTest) {
         enqueueSnackbar(t("enterQuickTestValue"), { variant: "error" });

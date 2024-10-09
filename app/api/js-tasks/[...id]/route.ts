@@ -32,7 +32,7 @@ const runCode = (code: string) => {
 };
 
 const setCorsHeaders = (response: Response) => {
-  response.headers.set("Access-Control-Allow-Origin", "*"); // Możesz ograniczyć do konkretnego źródła
+  response.headers.set("Access-Control-Allow-Origin", "*");
   response.headers.set("Access-Control-Allow-Methods", "GET, PUT, OPTIONS");
   response.headers.set("Access-Control-Allow-Headers", "Content-Type");
 };
