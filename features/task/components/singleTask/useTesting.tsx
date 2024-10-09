@@ -51,23 +51,20 @@ const useTesting = () => {
         snackbarDisplayed = true;
         return;
       }
-      const responseFullTests = await fetch(
-        "http://localhost:3000/api/js-tasks/[...id]",
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            solution: solution,
-            variant: variant,
-            inputs: inputs,
-            expectedResult: fullExpectedResult,
-            userId: ActiveUserId,
-            taskId: taskId,
-          }),
-        }
-      );
+      const responseFullTests = await fetch(`/api/js-tasks/${taskId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          solution: solution,
+          variant: variant,
+          inputs: inputs,
+          expectedResult: fullExpectedResult,
+          userId: ActiveUserId,
+          taskId: taskId,
+        }),
+      });
       if (responseFullTests.ok) {
         const resultFullTests = await responseFullTests.json();
         if (variant === "test") {
@@ -134,38 +131,36 @@ const useTesting = () => {
 
   const handleRunCodeQuickTest = async () => {
     try {
+      const url = window.location.href;
+      const startIndex = url.indexOf("task/") + 5;
+      const endIndex = url.indexOf("/", startIndex);
+      const taskId = url.substring(startIndex, endIndex);
       let snackbarDisplayed = false;
       if (!quickTest) {
         enqueueSnackbar(t("enterQuickTestValue"), { variant: "error" });
         snackbarDisplayed = true;
         return;
       }
-      const responseQuickTest = await fetch(
-        "http://localhost:3000/api/js-tasks/[...id]",
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            solution: `console.log(${solution}(${quickTest}))`,
-            variant: "quickTest",
-          }),
-        }
-      );
-      const responsePattern = await fetch(
-        "http://localhost:3000/api/js-tasks/[...id]",
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            solution: `console.log(${task?.assignment?.patternFunction}(${quickTest}))`,
-            variant: "quickTest",
-          }),
-        }
-      );
+      const responseQuickTest = await fetch(`/api/js-tasks/${taskId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          solution: `console.log(${solution}(${quickTest}))`,
+          variant: "quickTest",
+        }),
+      });
+      const responsePattern = await fetch(`/api/js-tasks/${taskId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          solution: `console.log(${task?.assignment?.patternFunction}(${quickTest}))`,
+          variant: "quickTest",
+        }),
+      });
 
       if (responseQuickTest.ok) {
         const result = await responseQuickTest.json();
