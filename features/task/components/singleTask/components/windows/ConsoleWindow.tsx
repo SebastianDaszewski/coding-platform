@@ -20,7 +20,7 @@ const ConsoleWindow: React.FC<ConsoleWindowProps> = ({
   const { data, refetch } = useQuery({
     queryKey: ["RunCode"],
     queryFn: async () => {
-      const response = await fetch("http://localhost:3000/api/RunCode", {
+      const response = await fetch("api/RunCode", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
