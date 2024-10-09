@@ -99,7 +99,7 @@ export async function PUT(request: Request): Promise<void | Response> {
         return `console.log(${solution}("${item}"))`;
       }
     });
-    const responseFullTests = await fetch("http://localhost:3000/api/RunCode", {
+    const responseFullTests = await fetch("api/RunCode", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
