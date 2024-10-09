@@ -51,7 +51,7 @@ const useTesting = () => {
         snackbarDisplayed = true;
         return;
       }
-      const responseFullTests = await fetch("api/js-tasks/[...id]", {
+      const responseFullTests = await fetch(`/api/js-tasks/${taskId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -131,13 +131,17 @@ const useTesting = () => {
 
   const handleRunCodeQuickTest = async () => {
     try {
+      const url = window.location.href;
+      const startIndex = url.indexOf("task/") + 5;
+      const endIndex = url.indexOf("/", startIndex);
+      const taskId = url.substring(startIndex, endIndex);
       let snackbarDisplayed = false;
       if (!quickTest) {
         enqueueSnackbar(t("enterQuickTestValue"), { variant: "error" });
         snackbarDisplayed = true;
         return;
       }
-      const responseQuickTest = await fetch("api/js-tasks/[...id]", {
+      const responseQuickTest = await fetch(`/api/js-tasks/${taskId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -147,7 +151,7 @@ const useTesting = () => {
           variant: "quickTest",
         }),
       });
-      const responsePattern = await fetch("api/js-tasks/[...id]", {
+      const responsePattern = await fetch(`/api/js-tasks/${taskId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
