@@ -26,7 +26,7 @@ export async function POST(request: Request): Promise<void | Response> {
   const body = (await request.json()) as Body;
   const { code } = body || "";
   const headers = {
-    "Access-Control-Allow-Origin": "*", // Zezwól na wszystkie źródła, możesz ograniczyć do konkretnego
+    "Access-Control-Allow-Origin": "*",
     "Access-Control-Allow-Methods": "POST",
     "Access-Control-Allow-Headers": "Content-Type",
   };

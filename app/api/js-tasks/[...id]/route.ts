@@ -31,6 +31,12 @@ const runCode = (code: string) => {
   return sandbox;
 };
 
+const setCorsHeaders = (response: Response) => {
+  response.headers.set("Access-Control-Allow-Origin", "*"); // Możesz ograniczyć do konkretnego źródła
+  response.headers.set("Access-Control-Allow-Methods", "GET, PUT, OPTIONS");
+  response.headers.set("Access-Control-Allow-Headers", "Content-Type");
+};
+
 export const GET = async (request: Request) => {
   try {
     const url = new URL(request.url);
@@ -48,7 +54,9 @@ export const GET = async (request: Request) => {
     if (!assignment) {
       return NextResponse.error();
     }
-    return NextResponse.json({ assignment });
+    const response = NextResponse.json({ assignment });
+    setCorsHeaders(response);
+    return response;
   } catch (error) {
     console.error("Error retrieving assignment:", error);
     return NextResponse.error();
@@ -68,6 +76,8 @@ export async function PUT(request: Request): Promise<void | Response> {
     taskId,
   } = body || {};
 
+  const response = new Response();
+
   if (variant === "quickTest") {
     try {
       console.log = (message: string) => {
@@ -83,13 +93,15 @@ export async function PUT(request: Request): Promise<void | Response> {
         resultArr.push(result);
       };
       runCode(solution);
-      return NextResponse.json(resultArr);
+      setCorsHeaders(response);
+      return NextResponse.json(resultArr, { headers: response.headers });
     } catch (e) {
       const error = e as Error;
       const errorName = error?.name;
       const message = error?.message;
       resultArr.push({ errorName, message });
-      return NextResponse.json(resultArr);
+      setCorsHeaders(response);
+      return NextResponse.json(resultArr, { headers: response.headers });
     }
   } else if (variant === "solution" || variant === "test") {
     const solutionLogsFullTests = inputs?.map((item: any) => {
@@ -199,13 +211,18 @@ export async function PUT(request: Request): Promise<void | Response> {
       });
     }
 
-    const response =
+    const responseToSend =
       variant === "test"
         ? updatedFullTestsResult.slice(0, 3)
         : updatedFullTestsResult;
 
-    return NextResponse.json(response);
+    setCorsHeaders(response);
+    return NextResponse.json(responseToSend, { headers: response.headers });
   }
 
-  return NextResponse.json({ error: "Invalid variant" });
+  setCorsHeaders(response);
+  return NextResponse.json(
+    { error: "Invalid variant" },
+    { headers: response.headers }
+  );
 }
