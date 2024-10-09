@@ -52,7 +52,6 @@ const useTesting = () => {
         return;
       }
       const responseFullTests = await fetch("api/js-tasks/[...id]", {
-        mode: "no-cors",
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -139,7 +138,6 @@ const useTesting = () => {
         return;
       }
       const responseQuickTest = await fetch("api/js-tasks/[...id]", {
-        mode: "no-cors",
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -150,7 +148,6 @@ const useTesting = () => {
         }),
       });
       const responsePattern = await fetch("api/js-tasks/[...id]", {
-        mode: "no-cors",
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
