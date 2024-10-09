@@ -25,6 +25,12 @@ export async function POST(request: Request): Promise<void | Response> {
   const resultArr: ResultType[] = [];
   const body = (await request.json()) as Body;
   const { code } = body || "";
+  const headers = {
+    "Access-Control-Allow-Origin": "*", // Zezwól na wszystkie źródła, możesz ograniczyć do konkretnego
+    "Access-Control-Allow-Methods": "POST",
+    "Access-Control-Allow-Headers": "Content-Type",
+  };
+
   try {
     console.log = (message: string) => {
       result = { message };
@@ -39,12 +45,12 @@ export async function POST(request: Request): Promise<void | Response> {
       resultArr.push(result);
     };
     runCode(code);
-    return NextResponse.json(resultArr);
+    return NextResponse.json(resultArr, { headers });
   } catch (e) {
     const error = e as Error;
     const errorName = error?.name;
     const message = error?.message;
     resultArr.push({ errorName, message });
-    return NextResponse.json(resultArr);
+    return NextResponse.json(resultArr, { headers });
   }
 }
