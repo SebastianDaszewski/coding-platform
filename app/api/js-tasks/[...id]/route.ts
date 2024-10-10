@@ -31,7 +31,7 @@ const runCode = (code: string) => {
   return sandbox;
 };
 
-export const GET = async (request: Request) => {
+export const GET = async (request: Request): Promise<Response> => {
   try {
     const url = new URL(request.url);
 
@@ -55,9 +55,7 @@ export const GET = async (request: Request) => {
   }
 };
 
-export async function PUT(
-  request: Request
-): Promise<Body | NextResponse<unknown>> {
+export async function PUT(request: Request): Promise<Response> {
   let result: ResultType = { message: "" };
   const resultArr: ResultType[] = [];
   const body = (await request.json()) as Body;
