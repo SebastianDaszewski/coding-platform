@@ -31,12 +31,6 @@ const runCode = (code: string) => {
   return sandbox;
 };
 
-const setCorsHeaders = (response: Response) => {
-  response.headers.set("Access-Control-Allow-Origin", "*");
-  response.headers.set("Access-Control-Allow-Methods", "GET, PUT, OPTIONS");
-  response.headers.set("Access-Control-Allow-Headers", "Content-Type");
-};
-
 export const GET = async (request: Request) => {
   try {
     const url = new URL(request.url);
@@ -54,16 +48,16 @@ export const GET = async (request: Request) => {
     if (!assignment) {
       return NextResponse.error();
     }
-    const response = NextResponse.json({ assignment });
-    setCorsHeaders(response);
-    return response;
+    return NextResponse.json({ assignment });
   } catch (error) {
     console.error("Error retrieving assignment:", error);
     return NextResponse.error();
   }
 };
 
-export async function PUT(request: Request): Promise<void | Response> {
+export async function PUT(
+  request: Request
+): Promise<Body | NextResponse<unknown>> {
   let result: ResultType = { message: "" };
   const resultArr: ResultType[] = [];
   const body = (await request.json()) as Body;
@@ -75,8 +69,6 @@ export async function PUT(request: Request): Promise<void | Response> {
     userId,
     taskId,
   } = body || {};
-
-  const response = new Response();
 
   if (variant === "quickTest") {
     try {
@@ -93,15 +85,13 @@ export async function PUT(request: Request): Promise<void | Response> {
         resultArr.push(result);
       };
       runCode(solution);
-      setCorsHeaders(response);
-      return NextResponse.json(resultArr, { headers: response.headers });
+      return NextResponse.json(resultArr);
     } catch (e) {
       const error = e as Error;
       const errorName = error?.name;
       const message = error?.message;
       resultArr.push({ errorName, message });
-      setCorsHeaders(response);
-      return NextResponse.json(resultArr, { headers: response.headers });
+      return NextResponse.json(resultArr);
     }
   } else if (variant === "solution" || variant === "test") {
     const solutionLogsFullTests = inputs?.map((item: any) => {
@@ -111,7 +101,7 @@ export async function PUT(request: Request): Promise<void | Response> {
         return `console.log(${solution}("${item}"))`;
       }
     });
-    const responseFullTests = await fetch("api/RunCode", {
+    const responseFullTests = await fetch("http://localhost:3000/api/RunCode", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -211,18 +201,13 @@ export async function PUT(request: Request): Promise<void | Response> {
       });
     }
 
-    const responseToSend =
+    const response =
       variant === "test"
         ? updatedFullTestsResult.slice(0, 3)
         : updatedFullTestsResult;
 
-    setCorsHeaders(response);
-    return NextResponse.json(responseToSend, { headers: response.headers });
+    return NextResponse.json(response);
   }
 
-  setCorsHeaders(response);
-  return NextResponse.json(
-    { error: "Invalid variant" },
-    { headers: response.headers }
-  );
+  return NextResponse.json({ error: "Invalid variant" });
 }
