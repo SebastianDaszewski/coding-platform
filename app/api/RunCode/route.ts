@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import vm from "vm";
+
 type Body = {
   code: string;
 };
@@ -7,6 +8,7 @@ type ResultType = {
   message: string;
   errorName?: string;
 };
+
 const runCode = (code: string) => {
   const sandbox = {
     console: {
@@ -20,11 +22,13 @@ const runCode = (code: string) => {
   vm.runInContext(code, context, { timeout });
   return sandbox;
 };
+
 export async function POST(request: Request): Promise<Response> {
   let result: ResultType = { message: "" };
   const resultArr: ResultType[] = [];
   const body = (await request.json()) as Body;
   const { code } = body || "";
+
   try {
     console.log = (message: string) => {
       result = { message };
@@ -39,12 +43,40 @@ export async function POST(request: Request): Promise<Response> {
       resultArr.push(result);
     };
     runCode(code);
-    return NextResponse.json(resultArr);
+
+    // Add CORS headers to allow cross-origin requests
+    const response = NextResponse.json(resultArr);
+    response.headers.set("Access-Control-Allow-Origin", "*"); // Allow all origins, or specify a particular origin
+    response.headers.set("Access-Control-Allow-Methods", "POST, GET, OPTIONS"); // Allow POST, GET, and OPTIONS requests
+    response.headers.set("Access-Control-Allow-Headers", "Content-Type");
+
+    return response;
   } catch (e) {
     const error = e as Error;
     const errorName = error?.name;
     const message = error?.message;
     resultArr.push({ errorName, message });
-    return NextResponse.json(resultArr);
+
+    // Add CORS headers to error response
+    const errorResponse = NextResponse.json(resultArr);
+    errorResponse.headers.set("Access-Control-Allow-Origin", "*");
+    errorResponse.headers.set(
+      "Access-Control-Allow-Methods",
+      "POST, GET, OPTIONS"
+    );
+    errorResponse.headers.set("Access-Control-Allow-Headers", "Content-Type");
+
+    return errorResponse;
   }
+}
+
+// Handle OPTIONS preflight request
+export async function OPTIONS() {
+  const response = new Response(null, {
+    status: 204,
+  });
+  response.headers.set("Access-Control-Allow-Origin", "*");
+  response.headers.set("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
+  response.headers.set("Access-Control-Allow-Headers", "Content-Type");
+  return response;
 }
