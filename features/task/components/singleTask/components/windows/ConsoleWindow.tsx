@@ -20,13 +20,16 @@ const ConsoleWindow: React.FC<ConsoleWindowProps> = ({
   const { data, refetch } = useQuery({
     queryKey: ["RunCode"],
     queryFn: async () => {
-      const response = await fetch("api/RunCode", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ code: solution }),
-      });
+      const response = await fetch(
+        "https://coding-platform-lemon.vercel.app/api/RunCode",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ code: solution }),
+        }
+      );
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }

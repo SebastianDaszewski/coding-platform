@@ -99,13 +99,16 @@ export async function PUT(request: Request): Promise<Response> {
         return `console.log(${solution}("${item}"))`;
       }
     });
-    const responseFullTests = await fetch("http://localhost:3000/api/RunCode", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ code: solutionLogsFullTests }),
-    });
+    const responseFullTests = await fetch(
+      "https://coding-platform-lemon.vercel.app/api/RunCode",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ code: solutionLogsFullTests }),
+      }
+    );
 
     const responseData = await responseFullTests.json();
 

@@ -20,17 +20,11 @@ const runCode = (code: string) => {
   vm.runInContext(code, context, { timeout });
   return sandbox;
 };
-export async function POST(request: Request): Promise<void | Response> {
+export async function POST(request: Request): Promise<Response> {
   let result: ResultType = { message: "" };
   const resultArr: ResultType[] = [];
   const body = (await request.json()) as Body;
   const { code } = body || "";
-  const headers = {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "POST",
-    "Access-Control-Allow-Headers": "Content-Type",
-  };
-
   try {
     console.log = (message: string) => {
       result = { message };
@@ -45,12 +39,12 @@ export async function POST(request: Request): Promise<void | Response> {
       resultArr.push(result);
     };
     runCode(code);
-    return NextResponse.json(resultArr, { headers });
+    return NextResponse.json(resultArr);
   } catch (e) {
     const error = e as Error;
     const errorName = error?.name;
     const message = error?.message;
     resultArr.push({ errorName, message });
-    return NextResponse.json(resultArr, { headers });
+    return NextResponse.json(resultArr);
   }
 }
