@@ -140,33 +140,32 @@ export async function PUT(request: Request): Promise<Response> {
             },
           });
 
-        if (!javascriptAssignmentSolution) {
-          await prisma.javascriptAssignmentSolution.create({
-            data: {
+        if (
+          !javascriptAssignmentSolution ||
+          javascriptAssignmentSolution.isCompleted !== passed
+        ) {
+          await prisma.javascriptAssignmentSolution.upsert({
+            where: {
+              javascriptAssignmentId_userId: {
+                javascriptAssignmentId: taskId,
+                userId: userId,
+              },
+            },
+            update: {
+              solution: [solution],
+              isCompleted: passed,
+            },
+            create: {
               javascriptAssignment: {
                 connect: { id: taskId },
               },
-              solution: [body.solution],
+              solution: [solution],
               isCompleted: passed,
               user: {
-                connect: { id: body.userId },
+                connect: { id: userId },
               },
             },
           });
-        } else {
-          if (
-            (!javascriptAssignmentSolution.isCompleted && !passed) ||
-            (javascriptAssignmentSolution.isCompleted && passed) ||
-            (!javascriptAssignmentSolution.isCompleted && passed)
-          ) {
-            await prisma.javascriptAssignmentSolution.update({
-              where: { id: javascriptAssignmentSolution?.id },
-              data: {
-                solution: [solution],
-                isCompleted: passed,
-              },
-            });
-          }
         }
       }
 

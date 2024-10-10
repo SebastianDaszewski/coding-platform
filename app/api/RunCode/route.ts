@@ -44,10 +44,9 @@ export async function POST(request: Request): Promise<Response> {
     };
     runCode(code);
 
-    // Add CORS headers to allow cross-origin requests
     const response = NextResponse.json(resultArr);
-    response.headers.set("Access-Control-Allow-Origin", "*"); // Allow all origins, or specify a particular origin
-    response.headers.set("Access-Control-Allow-Methods", "POST, GET, OPTIONS"); // Allow POST, GET, and OPTIONS requests
+    response.headers.set("Access-Control-Allow-Origin", "*");
+    response.headers.set("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
     response.headers.set("Access-Control-Allow-Headers", "Content-Type");
 
     return response;
@@ -57,7 +56,6 @@ export async function POST(request: Request): Promise<Response> {
     const message = error?.message;
     resultArr.push({ errorName, message });
 
-    // Add CORS headers to error response
     const errorResponse = NextResponse.json(resultArr);
     errorResponse.headers.set("Access-Control-Allow-Origin", "*");
     errorResponse.headers.set(
@@ -70,7 +68,6 @@ export async function POST(request: Request): Promise<Response> {
   }
 }
 
-// Handle OPTIONS preflight request
 export async function OPTIONS() {
   const response = new Response(null, {
     status: 204,
