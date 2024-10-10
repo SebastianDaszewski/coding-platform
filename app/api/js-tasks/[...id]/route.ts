@@ -100,7 +100,7 @@ export async function PUT(request: Request): Promise<Response> {
       }
     });
     const responseFullTests = await fetch(
-      "https://coding-platform-lemon.vercel.app/api/RunCode",
+      `${window.location.origin}/api/RunCode`,
       {
         method: "POST",
         headers: {
