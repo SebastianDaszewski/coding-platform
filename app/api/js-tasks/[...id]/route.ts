@@ -100,7 +100,7 @@ export async function PUT(request: Request): Promise<Response> {
       }
     });
     const responseFullTests = await fetch(
-      `${window.location.origin}/api/RunCode`,
+      "https://coding-platform-lemon.vercel.app/api/RunCode",
       {
         method: "POST",
         headers: {
@@ -141,28 +141,32 @@ export async function PUT(request: Request): Promise<Response> {
           });
 
         if (!javascriptAssignmentSolution) {
-          // If no solution exists for this user and task, create a new one
           await prisma.javascriptAssignmentSolution.create({
             data: {
               javascriptAssignment: {
                 connect: { id: taskId },
               },
               solution: [body.solution],
-              isCompleted: passed, // Mark as completed if passed
+              isCompleted: passed,
               user: {
                 connect: { id: body.userId },
               },
             },
           });
         } else {
-          // Always update the solution and completion status based on the current test
-          await prisma.javascriptAssignmentSolution.update({
-            where: { id: javascriptAssignmentSolution?.id },
-            data: {
-              solution: [solution], // Update the solution
-              isCompleted: passed, // Update the isCompleted status
-            },
-          });
+          if (
+            (!javascriptAssignmentSolution.isCompleted && !passed) ||
+            (javascriptAssignmentSolution.isCompleted && passed) ||
+            (!javascriptAssignmentSolution.isCompleted && passed)
+          ) {
+            await prisma.javascriptAssignmentSolution.update({
+              where: { id: javascriptAssignmentSolution?.id },
+              data: {
+                solution: [solution],
+                isCompleted: passed,
+              },
+            });
+          }
         }
       }
 
