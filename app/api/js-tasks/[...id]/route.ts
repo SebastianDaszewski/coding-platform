@@ -141,32 +141,28 @@ export async function PUT(request: Request): Promise<Response> {
           });
 
         if (!javascriptAssignmentSolution) {
+          // If no solution exists for this user and task, create a new one
           await prisma.javascriptAssignmentSolution.create({
             data: {
               javascriptAssignment: {
                 connect: { id: taskId },
               },
               solution: [body.solution],
-              isCompleted: passed,
+              isCompleted: passed, // Mark as completed if passed
               user: {
                 connect: { id: body.userId },
               },
             },
           });
         } else {
-          if (
-            (!javascriptAssignmentSolution.isCompleted && !passed) ||
-            (javascriptAssignmentSolution.isCompleted && passed) ||
-            (!javascriptAssignmentSolution.isCompleted && passed)
-          ) {
-            await prisma.javascriptAssignmentSolution.update({
-              where: { id: javascriptAssignmentSolution?.id },
-              data: {
-                solution: [solution],
-                isCompleted: passed,
-              },
-            });
-          }
+          // Always update the solution and completion status based on the current test
+          await prisma.javascriptAssignmentSolution.update({
+            where: { id: javascriptAssignmentSolution?.id },
+            data: {
+              solution: [solution], // Update the solution
+              isCompleted: passed, // Update the isCompleted status
+            },
+          });
         }
       }
 
