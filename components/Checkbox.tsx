@@ -18,7 +18,7 @@ const Checkbox: React.ForwardRefRenderFunction<
 > = ({ onChange, label, linkName, href, errorMessage, ...restProps }, ref) => {
   return (
     <div className="flex flex-col items-start">
-      <div className="flex gap-4 items-center h-5">
+      <div className="flex gap-4 h-5">
         <input
           onChange={onChange}
           {...restProps}

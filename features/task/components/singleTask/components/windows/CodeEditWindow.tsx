@@ -55,7 +55,7 @@ const CodeEditWindow: React.FC<CodeEditWindowProps> = ({
   const handleCloseModal = () => {
     refetch();
     if (isSuccess) {
-      router.push("http://localhost:3000/task");
+      router.push("/task");
     } else {
       setFormSubmitted(false);
     }
