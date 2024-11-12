@@ -67,7 +67,7 @@ const SidebarLink: React.FC<SidebarLinkProps> = ({
         margin="mt-5 -ml-4"
         color="gray-700"
         width={fullMenuView ? "55" : "15"}
-        hidden={iconName !== "AdminIcon" && iconName !== "JsTasksListIcon"}
+        hidden={iconName !== "SettingsIcon" && iconName !== "JsTasksListIcon"}
       />
     </div>
   );
