@@ -26,16 +26,6 @@ const sidebarItems: SidebarItem[] = [
     iconName: "RankingIcon",
   },
   {
-    message: "lessons",
-    href: "/lessons",
-    iconName: "LessonsIcon",
-  },
-  {
-    message: "calendar",
-    href: "/calendar",
-    iconName: "CalendarIcon",
-  },
-  {
     message: "task",
     href: "/task",
     iconName: "JsTasksListIcon",
@@ -44,11 +34,6 @@ const sidebarItems: SidebarItem[] = [
     message: "settings",
     href: "/settings",
     iconName: "SettingsIcon",
-  },
-  {
-    message: "admin",
-    href: "/admin",
-    iconName: "AdminIcon",
   },
 ];
 

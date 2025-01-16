@@ -14,8 +14,7 @@ const lexend = Lexend_Deca({
 });
 
 export const metadata = {
-  title: "Codebusters",
-  description: "Created by Devstock",
+  title: "Coding platform",
 };
 
 interface RootLayoutProps {
