@@ -15,6 +15,9 @@ const RegistrationForm = () => {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const t = useTranslations("registrationForm");
   const router = useRouter();
+  const path = window.location.pathname;
+  const isEnglish = path.startsWith("/en");
+  console.log(router, "router");
 
   type ValidationSchema = z.infer<typeof validationSchema>;
 
@@ -74,7 +77,8 @@ const RegistrationForm = () => {
     terms: boolean;
   }> = async (data) => {
     try {
-      const response = await fetch("api/register", {
+      const apiUrl = "/api/register";
+      const response = await fetch(apiUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -145,7 +149,7 @@ const RegistrationForm = () => {
                     label={t("email")}
                     placeholder="name@example.com"
                     type="email"
-                    errorMessage={errors.nickname?.message}
+                    errorMessage={errors.email?.message}
                     {...register("email")}
                   />
                 </div>

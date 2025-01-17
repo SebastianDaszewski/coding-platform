@@ -5,7 +5,8 @@
     "signOut": "Sign out",
     "privacyPolicy": "Privacy Policy",
     "contact": "Contact",
-    "hi": "Hi, "
+    "hi": "Hi, ",
+    "registration": "Register"
   },
   "Content": {
     "heroText": "platform for effective, fast and engaging learning of programming through practice.",
@@ -32,10 +33,10 @@
     "wrongEmail": "The email must be in the correct format",
     "shortPassword": "Password must contain at least 8 characters",
     "passwordComposition": "The password must contain at least 1 uppercase letter, 1 lowercase letter, 1 special character and 1 number",
-    "nickRequired": "The nickname must contain the appropriate number of characters",
-    "nameRequired": "First name must contain the appropriate number of characters",
+    "nickRequired": "The nickname is too short",
+    "nameRequired": "First name is too short",
     "passwordRequired": "Password is required",
-    "lastNameRequired": "Last name must contain the appropriate number of characters",
+    "lastNameRequired": "Last name is too short",
     "termsRequired": "You must accept the terms and conditions of service!",
     "samePasswords": "Passwords must match",
     "successRegistration": "Registration successful!",
